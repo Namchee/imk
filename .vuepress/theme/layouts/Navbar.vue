@@ -1,6 +1,6 @@
 <template>
-  <nav class="w-full lg:shadow bg-white flex items-center justify-center fixed top-0">
-    <button class="lg:hidden block absolute left-0 nav-burger" :class='{ "active" : drawer }'>
+  <nav class="w-full shadow-lg lg:shadow bg-white flex items-center justify-center fixed top-0">
+    <button class="lg:hidden block absolute left-0 nav-burger" :class='{ "active" : drawer }' @click='drawer = !drawer'>
       <span></span>
       <span></span>
       <span></span>
@@ -14,7 +14,7 @@
         width="40"
         height="40"
       />
-      <span class="lg:hidden ml-2 text-dark2 text-3xl anim-text">Sarasvati</span>
+      <span class="lg:hidden ml-2 text-dark2 text-3xl logo-text">Sarasvati</span>
     </a>
     <a
       v-for="(item, index) in $site.themeConfig.nav"
@@ -28,7 +28,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function() {
+    return {
+      drawer: false,
+    };
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -61,20 +67,45 @@ export default {};
   width: 2rem;
   outline: none;
   margin-left: 1rem;
+  cursor: pointer;
+
   & span {
     display: block;
     width: 100%;
-    height: 3px;
-    background: black;
-    border: 1px solid black;
+    height: 4px;
+    background: #424242;
+    border: 1px solid #424242;
+    border-radius: 32.5%;
+    transition: transform 200ms ease, opacity 150ms linear;
+    transform-origin: center center;
+  }
+
+  & span:nth-child(2) {
+    position: absolute;
   }
 
   & span:not(:last-child) {
     margin-bottom: 5px;
   }
+
+  &.active span:first-child {
+    opacity: 0;
+  }
+
+  &.active span:nth-child(2) {
+    transform: rotateZ(45deg);
+  }
+
+  &.active span:nth-child(3) {
+    transform: rotateZ(-45deg);
+  }
+
+  &.active span:last-child {
+    opacity: 0;
+  }
 }
 
-.anim-text {
+.logo-text {
   margin-top: -5px;
 }
 
