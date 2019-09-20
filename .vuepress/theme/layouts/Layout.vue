@@ -16,8 +16,5 @@ export default {
 </script>
 
 
-<style lang="postcss">
-/* DO NOT SCOPE THIS!!! */
-@import './../styles/theme.css';
-
+<style lang="postcss" scoped>
 </style>

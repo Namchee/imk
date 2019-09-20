@@ -1,29 +1,61 @@
 <template>
-  <nav class="w-full shadow-lg lg:shadow bg-white flex items-center justify-center fixed top-0">
-    <button class="lg:hidden block absolute left-0 nav-burger" :class='{ "active" : drawer }' @click='drawer = !drawer'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <a href="/" class="flex justify-center items-center p-3 lg:p-2 px-5 lg:order-2 nav-item logo relative">
-      <img
-        src="./../../../resources/logo.png"
-        alt="Roemah Seni Sarasvati"
-        title="Roemah Seni Sarasvati"
-        width="40"
-        height="40"
-      />
-      <span class="lg:hidden ml-2 text-dark2 text-3xl logo-text">Sarasvati</span>
-    </a>
-    <a
-      v-for="(item, index) in $site.themeConfig.nav"
-      :href="item.link"
-      :key="index"
-      class="hidden lg:inline-block p-3 px-5 uppercase font-serif font-semibold tracking-widest text-lg nav-item"
-      :class="index >= 2 ? `lg:order-${index + 1}` : `lg:order-${index}`"
-      :data-hover="item.text"
-    >{{ item.text }}</a>
+  <nav class="w-full shadow-lg lg:shadow bg-white flex items-center justify-center fixed top-0 navbar" :class="{ 'hide-navbar': hideNav }">
+    <div class="hidden sm:flex sm:items-center sm:justify-center">
+      <a
+        href="/"
+        class="flex justify-center items-center p-3 sm:p-2 sm:px-5 lg:px-6 xl:px-7 sm:order-2 nav-item logo"
+        :class="{ 'active': activeLink('/') }"
+      >
+        <img
+          src="./../../../resources/logo.png"
+          alt="Roemah Seni Sarasvati"
+          title="Roemah Seni Sarasvati"
+          width="40"
+          height="40"
+        />
+      </a>
+      <a
+        v-for="(item, index) in $site.themeConfig.nav"
+        :href="item.link"
+        :key="index"
+        class="hidden sm:inline-block sm:p-2 sm:px-5 p-2 lg:px-6 xl:px-7 uppercase font-serif font-semibold tracking-widest text-lg nav-item"
+        :class="index >= 2 ? `sm:order-${index + 1}` : `sm:order-${index}`"
+        :data-hover="item.text"
+      >
+        <span :class="{ 'active': activeLink(item.link) }">
+          {{ item.text }}
+        </span>
+      </a>
+    </div>
+    <div class="w-full flex flex-row justify-evenly sm:hidden">
+      <a href="/" class="p-2 px-4 nav-item mobile-nav-item"
+        :class="{ 'active': activeLink('/') }">
+        <div class="flex flex-col items-center">
+          <i class="material-icons">
+            home
+          </i>
+          <span class="text-xs">
+            Home
+          </span>
+        </div>
+      </a>
+      <a
+        v-for="(item, index) in $site.themeConfig.nav"
+        :href="item.link"
+        :key="index"
+        class="p-2 px-4 nav-item mobile-nav-item"
+        :class="{ 'active': activeLink(item.link) }"
+      >
+        <div class="flex flex-col items-center">
+          <i class="material-icons">
+            {{ item.icon }}
+          </i>
+          <span class="text-xs">
+            {{ item.text }}
+          </span>
+        </div>
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -31,27 +63,64 @@
 export default {
   data: function() {
     return {
-      drawer: false,
+      scroll: 0,
+      hideNav: false,
     };
   },
+
+  mounted: function() {
+    window.addEventListener('scroll', this.hideNavOnScroll);
+  },
+
+  methods: {
+    activeLink: function(link) {
+      return link === this.$router.history.current.path;
+    },
+
+    hideNavOnScroll: function() {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollPosition < 0) {
+        return;
+      }
+
+      this.hideNav = scrollPosition > this.scroll;
+      this.scroll = scrollPosition;
+    }
+  }
 };
 </script>
 
 <style lang="postcss" scoped>
+.navbar {
+  transform: translateY(0);
+  transition: transform 250ms ease;
+}
+
+.hide-navbar {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
 .nav-item {
   position: relative;
   overflow: hidden;
-  color: #36363650;
+  color: #36363660;
+  cursor: pointer;
 
-  &:not(.logo)::before {
-    color: #2e4052AF;
+  & span.active {
+    color: #00A3D2;
+  }
+
+  &:not(.logo):not(.mobile-nav-item)::before {
+    color: #00A3D2;
     position: absolute;
     content: attr(data-hover);
     white-space: nowrap;
     overflow: hidden;
     display: block;
-    left: 1.25rem;
-    top: 0.75rem;
+    left: 1.5rem;
+    top: 0.5rem;
     width: 0;
     height: 100%;
     transition: width 200ms ease;
@@ -62,61 +131,22 @@ export default {
   }
 }
 
-.nav-burger {
-  height: 2rem;
-  width: 2rem;
-  outline: none;
-  margin-left: 1rem;
-  cursor: pointer;
-
-  & span {
-    display: block;
-    width: 100%;
-    height: 4px;
-    background: #424242;
-    border: 1px solid #424242;
-    border-radius: 32.5%;
-    transition: transform 200ms ease, opacity 150ms linear;
-    transform-origin: center center;
-  }
-
-  & span:nth-child(2) {
-    position: absolute;
-  }
-
-  & span:not(:last-child) {
-    margin-bottom: 5px;
-  }
-
-  &.active span:first-child {
-    opacity: 0;
-  }
-
-  &.active span:nth-child(2) {
-    transform: rotateZ(45deg);
-  }
-
-  &.active span:nth-child(3) {
-    transform: rotateZ(-45deg);
-  }
-
-  &.active span:last-child {
-    opacity: 0;
-  }
-}
-
 .logo-text {
   margin-top: -5px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .logo {
     filter: grayscale(1);
-    transition: all 150ms linear;
+    transition: all 175ms linear;
+  }
+
+  .logo.active {
+    filter: none;
   }
 
   .logo:hover {
-    filter: grayscale(0);
+    filter: none;
   }
 }
 </style>

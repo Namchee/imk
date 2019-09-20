@@ -12,10 +12,10 @@ module.exports =  {
   description: 'Just playing around',
   themeConfig: {
     nav: [
-      { text: 'About Us', link: '/guide/' },
-      { text: 'Gallery', link: 'https://google.com' },
-      { text: 'Facilities', link: 'https://google.com' },
-      { text: 'Events', link: 'https://google.com' },
+      { text: 'About Us', link: '/about/', icon: 'perm_identity', },
+      { text: 'Gallery', link: '/gallery/', icon: 'insert_photo' },
+      { text: 'Facilities', link: '/facilities/', icon: 'map' },
+      { text: 'Events', link: '/events/', icon: 'local_activity' },
     ]
-  }
+  },
 }

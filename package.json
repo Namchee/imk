@@ -11,9 +11,9 @@
   "author": "Cristopher Namchee, Kevin Draven Kenanga",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.15",
+    "material-design-icons-iconfont": "^5.0.1",
     "tailwindcss": "^1.1.2",
-    "typeface-comfortaa": "0.0.76",
-    "typeface-neucha": "0.0.72",
     "vuepress": "^1.1.0"
   },
   "devDependencies": {
