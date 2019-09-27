@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full shadow-lg lg:shadow bg-white flex items-center justify-center fixed top-0 navbar" :class="{ 'hide-navbar': hideNav }">
+  <nav class="w-full shadow sm:shadow-lg bg-white flex items-center justify-center fixed top-0 navbar" :class="{ 'hide-navbar': hideNav }">
     <div class="hidden sm:flex sm:items-center sm:justify-center">
       <a
         href="/"
@@ -9,7 +9,6 @@
         <img
           src="./../../../resources/logo.png"
           alt="Roemah Seni Sarasvati"
-          title="Roemah Seni Sarasvati"
           width="40"
           height="40"
         />
@@ -18,7 +17,7 @@
         v-for="(item, index) in $site.themeConfig.nav"
         :href="item.link"
         :key="index"
-        class="hidden sm:inline-block sm:p-2 sm:px-5 p-2 lg:px-6 xl:px-7 uppercase font-serif font-semibold tracking-widest text-lg nav-item"
+        class="hidden sm:inline-block p-2 px-6 uppercase font-serif font-semibold tracking-widest text-lg nav-item"
         :class="index >= 2 ? `sm:order-${index + 1}` : `sm:order-${index}`"
         :data-hover="item.text"
       >
@@ -28,13 +27,11 @@
       </a>
     </div>
     <div class="w-full flex flex-row justify-evenly sm:hidden">
-      <a href="/" class="p-2 px-4 nav-item mobile-nav-item"
+      <a href="/" class="p-1 nav-item mobile-nav-item"
         :class="{ 'active': activeLink('/') }">
         <div class="flex flex-col items-center">
-          <i class="material-icons">
-            home
-          </i>
-          <span class="text-xs">
+          <i class="mdi mdi-home-outline icon-lg" />
+          <span class="text-sm">
             Home
           </span>
         </div>
@@ -43,14 +40,12 @@
         v-for="(item, index) in $site.themeConfig.nav"
         :href="item.link"
         :key="index"
-        class="p-2 px-4 nav-item mobile-nav-item"
+        class="p-1 nav-item mobile-nav-item"
         :class="{ 'active': activeLink(item.link) }"
       >
         <div class="flex flex-col items-center">
-          <i class="material-icons">
-            {{ item.icon }}
-          </i>
-          <span class="text-xs">
+          <i class="mdi icon-lg" :class="`mdi-${item.icon}`" />
+          <span class="text-sm">
             {{ item.text }}
           </span>
         </div>
@@ -60,6 +55,8 @@
 </template>
 
 <script>
+import { throttle } from 'lodash';
+
 export default {
   data: function() {
     return {
@@ -69,7 +66,7 @@ export default {
   },
 
   mounted: function() {
-    window.addEventListener('scroll', this.hideNavOnScroll);
+    window.addEventListener('scroll', throttle(this.hideNavOnScroll, 200));
   },
 
   methods: {
@@ -80,7 +77,7 @@ export default {
     hideNavOnScroll: function() {
       const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollPosition < 0) {
+      if (scrollPosition < 0 || Math.abs(scrollPosition - this.scroll) < 50) {
         return;
       }
 
@@ -97,9 +94,11 @@ export default {
   transition: transform 250ms ease;
 }
 
-.hide-navbar {
-  transform: translateY(-100%);
-  box-shadow: none;
+@media screen and (min-width: 640px) {
+  .hide-navbar {
+    transform: translateY(-100%);
+    box-shadow: none;
+  }
 }
 
 .nav-item {
@@ -108,12 +107,16 @@ export default {
   color: #36363660;
   cursor: pointer;
 
+  &.active {
+    color: #FF9617;
+  }
+
   & span.active {
-    color: #00A3D2;
+    color: #FF9617;
   }
 
   &:not(.logo):not(.mobile-nav-item)::before {
-    color: #00A3D2;
+    color: #FF9617;
     position: absolute;
     content: attr(data-hover);
     white-space: nowrap;

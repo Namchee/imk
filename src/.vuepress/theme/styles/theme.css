@@ -5,3 +5,7 @@
 .justify-evenly {
     justify-content: space-evenly;
 }
+
+.icon-lg {
+    font-size: 1.65rem;
+}

@@ -6,14 +6,17 @@
   "scripts": {
     "clean": "rm -rf node_modules/",
     "refresh": "rm -rf node_modules/ & npm i",
-    "dev": "vuepress dev"
+    "dev": "vuepress dev src"
   },
   "author": "Cristopher Namchee, Kevin Draven Kenanga",
   "license": "ISC",
   "dependencies": {
+    "@mdi/font": "^4.4.95",
     "lodash": "^4.17.15",
     "material-design-icons-iconfont": "^5.0.1",
     "tailwindcss": "^1.1.2",
+    "typeface-merriweather": "0.0.72",
+    "typeface-source-sans-pro": "0.0.75",
     "vuepress": "^1.1.0"
   },
   "devDependencies": {
@@ -27,7 +30,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-vue": "^5.2.3",
     "postcss-advanced-variables": "^3.0.0",
-    "postcss-import": "^12.0.1",
+    "postcss-easy-import": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "rimraf": "^3.0.0"
   }
