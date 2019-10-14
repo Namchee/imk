@@ -1,7 +1,7 @@
 <template>
-  <div class="font-sans">
+  <div class="font-sans subpixel-antialiased">
     <Navbar />
-    <Content class="content p-4 pt-20 sm:pt-16" />
+    <Content class="content p-4 lg:pt-24 pt-20" />
     <Footer class="footer" />
   </div>
 </template>

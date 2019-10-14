@@ -1,21 +1,23 @@
 module.exports =  {
   postcss: {
     plugins: [
-      require('postcss-easy-import'),
+      require('postcss-import'),
       require('postcss-advanced-variables'),
+      require('postcss-calc'),
       require('tailwindcss')('./src/.vuepress/theme/tailwind-config.js'),
       require('postcss-preset-env')({ stage: 0 }),
       require('autoprefixer')
     ],
   },
-  title: 'Test title',
-  description: 'Just playing around',
+  title: 'Roemah Seni Sarasvati',
   themeConfig: {
     nav: [
-      { text: 'About Us', link: '/about/', icon: 'account-circle-outline', },
-      { text: 'Gallery', link: '/gallery/', icon: 'image-filter' },
-      { text: 'Facilities', link: '/facilities/', icon: 'map-outline' },
-      { text: 'Events', link: '/events/', icon: 'ticket' },
+      { text: 'Home', link: '/' },
+      { text: 'About Us', link: '/about' },
+      { text: 'Facilities', link: '/facility' },
+      { text: 'Collections', link: '/collections' },
+      { text: 'Exhibitions', link: '/exhibitions' },
+      { text: 'Blog', link: '/blog' },
     ]
-  },
+  }
 }

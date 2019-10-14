@@ -1,26 +1,25 @@
 <template>
-  <nav class="w-full shadow bg-white flex justify-between fixed top-0 lg:px-6 navbar"
-    :class='{ "hide-navbar": hideMenu }'>
-    <a class="flex items-center justify-center logo ml-3" href="/">
+  <nav class="w-full lg:w-auto lg:h-full shadow bg-white flex lg:flex-col justify-between fixed top-0 left-0 lg:py-10">
+    <a class="flex lg:flex-col items-center justify-center logo lg:mb-4 lg:ml-0 ml-3" href="/">
       <img
         src="./../../../resources/logo.png"
         alt="Roemah Seni Sarasvati"
         title="Roemah Seni Sarasvati"
-        class="logo-image"
+        class="logo-image lg:mb-4"
       />
-      <span class="font-serif lg:ml-3 ml-2 text-xl lg:text-2xl uppercase logo-text tracking-wide">
+      <span class="font-serif text-xl lg:text-2xl ml-2 lg:ml-0 uppercase logo-text tracking-wide">
         Sarasvati
       </span>
     </a>
     <div 
-      class="w-full menu-items lg:flex"
+      class="w-64 h-full menu-items lg:flex lg:flex-col lg:justify-between"
       :class='{ "active": mobileMenu }'>
-      <div class="menu-links lg:flex ml-auto mr-auto">
+      <div class="menu-links mt-12">
         <a 
           v-for='(item, index) in $site.themeConfig.nav'
           :href='item.link'
           :key='index'
-          class='font-sans-alt text-3xl lg:text-lg nav-item flex justify-center items-center'
+          class='font-sans-alt text-3xl lg:text-2xl nav-item block text-center'
           :class='{ "active": activeLink(item.link) }'
         >
           <span>
@@ -28,7 +27,7 @@
           </span>
         </a>
       </div>
-      <div class="flex items-center uppercase text-lg text-base">
+      <div class="text-center uppercase text-lg text-base">
         EN / ID
       </div>
       <button class="menu-close lg:hidden"
@@ -60,56 +59,18 @@ export default {
   data: function() {
     return {
       mobileMenu: false,
-      hideMenu: false,
-      tick: false,
-      lastScroll: 0,
-      currentScroll: 0,
     };
-  },
-
-  mounted: function() {
-    window.addEventListener('scroll', this.handleScroll);
   },
 
   methods: {
     activeLink: function(link) {
       return link === this.$router.history.current.path;
-    },
-
-    handleScroll: function() {
-      this.currentScroll = window.pageYOffset;
-      this.requestTick();
-    },
-
-    requestTick: function() {
-      if (!this.tick) {
-        requestAnimationFrame(this.updateNav);
-      }
-
-      this.tick = true;
-    },
-
-    updateNav: function() {
-      this.hideMenu = this.lastScroll < this.currentScroll;
-      this.lastScroll = this.currentScroll;
-
-      this.tick = false;
-    },
+    }
   }
 };
 </script>
 
 <style lang="postcss" scoped>
-.navbar {
-  transform: translateY(0);
-  transition: transform 250ms ease;
-}
-
-.hide-navbar {
-  transform: translateY(-100%);
-  box-shadow: none;
-}
-
 .logo-image {
   width: 36px;
   height: 36px;
@@ -117,8 +78,8 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .logo-image {
-    width: 55px;
-    height: 55px;
+    width: 72px;
+    height: 72px;
   }
 }
 
@@ -220,7 +181,7 @@ export default {
 }
 
 .nav-item {
-  width: 7.5rem;
+  font-weight: 350;
 
   & span {
     position: relative;
@@ -228,12 +189,12 @@ export default {
 
   & span::before {
     content: '';
-    bottom: 13.5%;
+    bottom: 6.5%;
     z-index: -1;
     position: absolute;
     width: 0;
     height: 6px;
-    transition: width 200ms ease;
+    transition: width 300ms ease-out;
   }
 
   &:nth-child(2n + 1) span::before {

@@ -2,17 +2,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        light1: '#2EB3DA',
-        light2: '#FF9617',
-        dark1: '#313131',
-        dark2: '#2A3439',
-        snow: '#F7F2FA',
+        light1: '#FF9117',
+        light2: '#1E89DD',
+        dark1: '#260826',
+        dark2: '#313131',
+        snow: '#F4F9FA',
       },
+      fontFamily: {
+        'sans-alt': ['League Spartan', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+      }
     },
-
     fontFamily: {
-      sans: ['Source Sans Pro', 'Arial', 'sans-serif'],
-      serif: ['Merriweather', 'Georgia', 'Times New Roman', 'serif'],
-    },
+      sans: ['Selawik', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
+      serif: ['Source Serif', 'Georgia', 'Times New Roman', 'serif'],
+    }
   },
 }

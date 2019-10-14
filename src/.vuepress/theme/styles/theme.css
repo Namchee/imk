@@ -2,10 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.justify-evenly {
-    justify-content: space-evenly;
+@font-face {
+    font-family: 'League Spartan';
+    font-weight: 200 900;
+    font-display: auto;
+    src: local('League Spartan Variatons'),
+        url('./../../../../src/resources/fonts/League Spartan.woff2') format('woff2-variations'),
+        url('./../../../../src/resources/fonts/League Spartan.ttf') format('truetype-variations');
+    unicode-range: U+00-7F;
 }
 
-.icon-lg {
-    font-size: 1.65rem;
+@font-face {
+    font-family: 'Selawik';
+    font-weight: 300 900;
+    font-display: auto;
+    src: local('Selawik Variations'),
+        url('./../../../../src/resources/fonts/Selawik.woff2') format('woff2-variations'),
+        url('./../../../../src/resources/fonts/Selawik.ttf') format('truetype-variations');
+    unicode-range: U+00-7F;
+}
+
+@font-face {
+    font-family: 'Source Serif';
+    font-weight: 200 900;
+    font-display: auto;
+    src: local('Source Serif Variations'),
+        url('./../../../../src/resources/fonts/Source Serif.woff2') format('woff2-variations'),
+        url('./../../../../src/resources/fonts/Source Serif.ttf') format('truetype-variations');
+    unicode-range: U+00-7F;
 }
