@@ -1,95 +1,71 @@
 <template>
-  <footer class="flex justify-center items-center bg-dark2 text-white p-12">
-    <div class="flex justify-center items-center">
-      <div>
-        <?xml version="1.0" encoding="iso-8859-1"?>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<g>
-	<g>
-		<g>
-			<path d="M486.4,460.8c-1.476,0-2.944,0.128-4.386,0.384c-5.888-10.607-17.092-17.451-29.747-17.451
-				c-12.655,0-23.859,6.844-29.747,17.451c-1.442-0.256-2.91-0.384-4.386-0.384c-14.114,0-25.6,11.486-25.6,25.6
-				c0,3.004,0.614,5.845,1.579,8.533H358.4v-51.2h42.667c4.71,0,8.533-3.823,8.533-8.533V93.867c0-4.71-3.823-8.533-8.533-8.533
-				h-256c-4.71,0-8.533,3.823-8.533,8.533v409.6c0,4.71,3.823,8.533,8.533,8.533H486.4c14.114,0,25.6-11.486,25.6-25.6
-				S500.514,460.8,486.4,460.8z M358.4,102.4h34.133v51.2H358.4V102.4z M358.4,170.667h34.133v51.2H358.4V170.667z M358.4,238.933
-				h34.133v51.2H358.4V238.933z M358.4,307.2h34.133v51.2H358.4V307.2z M358.4,375.467h34.133v51.2H358.4V375.467z M187.733,494.933
-				H153.6v-51.2h34.133V494.933z M187.733,426.667H153.6v-51.2h34.133V426.667z M187.733,358.4H153.6v-51.2h34.133V358.4z
-				 M187.733,290.133H153.6v-51.2h34.133V290.133z M187.733,221.867H153.6v-51.2h34.133V221.867z M187.733,153.6H153.6v-51.2h34.133
-				V153.6z M238.933,494.933H204.8v-51.2h34.133V494.933z M238.933,426.667H204.8v-51.2h34.133V426.667z M238.933,358.4H204.8v-51.2
-				h34.133V358.4z M238.933,290.133H204.8v-51.2h34.133V290.133z M238.933,221.867H204.8v-51.2h34.133V221.867z M238.933,153.6
-				H204.8v-51.2h34.133V153.6z M290.133,494.933H256v-51.2h34.133V494.933z M290.133,426.667H256v-51.2h34.133V426.667z
-				 M290.133,358.4H256v-51.2h34.133V358.4z M290.133,290.133H256v-51.2h34.133V290.133z M290.133,221.867H256v-51.2h34.133V221.867
-				z M290.133,153.6H256v-51.2h34.133V153.6z M341.333,494.933H307.2v-51.2h34.133V494.933z M341.333,426.667H307.2v-51.2h34.133
-				V426.667z M341.333,358.4H307.2v-51.2h34.133V358.4z M341.333,290.133H307.2v-51.2h34.133V290.133z M341.333,221.867H307.2v-51.2
-				h34.133V221.867z M341.333,153.6H307.2v-51.2h34.133V153.6z M486.4,494.933h-68.267c-4.702,0-8.533-3.831-8.533-8.533
-				s3.831-8.533,8.533-8.533c1.638,0,3.191,0.469,4.625,1.391c2.338,1.502,5.257,1.775,7.834,0.734
-				c2.577-1.041,4.48-3.277,5.103-5.982c1.801-7.774,8.619-13.21,16.572-13.21c7.953,0,14.771,5.436,16.572,13.21
-				c0.623,2.705,2.526,4.941,5.103,5.982c2.577,1.041,5.495,0.768,7.834-0.734c5.547-3.584,13.167,0.802,13.158,7.142
-				C494.933,491.102,491.102,494.933,486.4,494.933z"/>
-			<path d="M187.733,59.733v-25.6h59.733c4.71,0,8.533-3.823,8.533-8.533v-8.533h34.133V25.6c0,4.71,3.823,8.533,8.533,8.533H358.4
-				V51.2H213.333c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h213.333v353.954c0,4.71,3.823,8.533,8.533,8.533
-				s8.533-3.823,8.533-8.533V59.733c0-4.71-3.823-8.533-8.533-8.533h-59.733V25.6c0-4.71-3.823-8.533-8.533-8.533H307.2V8.533
-				c0-4.71-3.823-8.533-8.533-8.533h-51.2c-4.71,0-8.533,3.823-8.533,8.533v8.533H179.2c-4.71,0-8.533,3.823-8.533,8.533v25.6
-				h-59.733c-4.71,0-8.533,3.823-8.533,8.533v435.2H51.2v-34.995c19.447-3.968,34.133-21.197,34.133-41.805
-				c0-1.109-0.486-110.933-42.667-110.933C0.486,307.2,0,417.024,0,418.133c0,20.608,14.686,37.837,34.133,41.805v34.995h-25.6
-				c-4.71,0-8.533,3.823-8.533,8.533S3.823,512,8.533,512h102.4c4.71,0,8.533-3.823,8.533-8.533v-435.2H179.2
-				C183.91,68.267,187.733,64.444,187.733,59.733z M17.067,418.133c0-42.513,11.418-93.867,25.6-93.867
-				c14.182,0,25.6,51.354,25.6,93.867c0,14.114-11.486,25.6-25.6,25.6S17.067,432.247,17.067,418.133z"/>
-		</g>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-
-      </div>
-      <div>
-
-      </div>
+  <footer class="text-center bg-dark2 text-white p-8 pb-4 pt-12 lg:p-16 lg:pt-24">
+    <div>
+      <h1 class="text-4xl uppercase lg:mb-1 font-thin tracking-widest">Stay In Touch</h1>
+      <h3
+        class="font-sans-alt hidden lg:block"
+      >Get the latest information about us directly to your inbox</h3>
     </div>
-    <div class="flex justify-center items-center">
-      test
+
+    <div class="w-full flex flex-col lg:flex-row items-center justify-center my-8 lg:my-12">
+      <input type="email" class="w-full lg:w-64 p-3 px-5 bg-transparent border-2 border-white" />
+      <button
+        class="uppercase tracking-widest px-5 border-2 p-3 lg:border-l-0 lg:border-t-2 border-t-0 w-full lg:w-auto border-white"
+      >Submit</button>
+    </div>
+
+    <hr />
+
+    <div
+      class="w-full flex flex-col lg:flex-row items-center justify-between pt-5 lg:pt-12 lg:px-10"
+    >
+      <img
+        class="hidden lg:block"
+        src="./../../../resources/logo-full.png"
+        alt="Roemah Seni Sarasvati logo"
+        title="Roemah Seni Sarasvati"
+        width="210"
+        height="105"
+      />
+      <div class="w-full lg:w-auto text-left lg:my-0 my-2">
+        <h2 class="text-xl font-sans-alt tracking-wider mb-2">Gallery</h2>
+        <p class="text-sm">Sudirman Street 137</p>
+        <p class="text-sm">Astanaanyar, Bandung, Indonesia</p>
+        <p class="text-sm">40241</p>
+      </div>
+      <div class="w-full lg:w-auto text-left lg:my-0 my-2">
+        <h2 class="text-xl font-sans-alt tracking-wider mb-2">Office</h2>
+        <p class="text-sm">Jembatan Batu Street 50</p>
+        <p class="text-sm">Tamansari, Jakarta, Indonesia</p>
+        <p class="text-sm">40241</p>
+      </div>
+      <div class="text-left lg:my-0 my-2">
+        <h2 class="text-xl font-sans-alt tracking-wider mb-2">Contact</h2>
+        <p class="text-sm">
+          <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          >
+            <path
+              d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376"
+            />
+          </svg>
+        </p>
+        <p class="text-sm">Jakarta Barat, DKI Jakarta, Indonesia</p>
+        <p class="text-sm">40241</p>
+      </div>
     </div>
   </footer>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style lang="postcss" scoped>
-.media-icon {
-  transition: color 100ms ease;
-}
 </style>

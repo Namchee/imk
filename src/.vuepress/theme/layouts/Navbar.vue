@@ -8,7 +8,7 @@
         title="Roemah Seni Sarasvati"
         class="logo-image"
       />
-      <span class="font-serif lg:ml-3 ml-2 text-xl lg:text-2xl uppercase logo-text tracking-wide">
+      <span class="font-serif lg:ml-3 ml-2 text-2xl uppercase logo-text tracking-wide">
         Sarasvati
       </span>
     </a>
@@ -20,7 +20,7 @@
           v-for='(item, index) in $site.themeConfig.nav'
           :href='item.link'
           :key='index'
-          class='font-sans-alt text-3xl lg:text-lg nav-item flex justify-center items-center'
+          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
           :class='{ "active": activeLink(item.link) }'
         >
           <span>
@@ -54,8 +54,6 @@
 </template>
 
 <script>
-import { throttle } from "lodash";
-
 export default {
   data: function() {
     return {
@@ -102,17 +100,16 @@ export default {
 <style lang="postcss" scoped>
 .navbar {
   transform: translateY(0);
-  transition: transform 250ms ease;
+  transition: transform 250ms ease-in-out;
 }
 
 .hide-navbar {
-  transform: translateY(-100%);
-  box-shadow: none;
+  transform: translateY(-105%);
 }
 
 .logo-image {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -220,8 +217,6 @@ export default {
 }
 
 .nav-item {
-  width: 7.5rem;
-
   & span {
     position: relative;
   }
