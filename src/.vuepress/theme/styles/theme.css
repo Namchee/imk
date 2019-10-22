@@ -26,3 +26,19 @@
 .font-loaded .font-sans-alt {
     font-family: 'Lexend', system-ui;
 }
+
+.flex-grow-half {
+    flex: 50%;
+}
+
+.flex-grow-40 {
+    flex: 40%;
+}
+
+.flex-grow-60 {
+    flex: 60%;
+}
+
+.flex-grow-full {
+    flex: 100%;
+}
