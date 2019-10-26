@@ -1,33 +1,68 @@
 <template>
-  <nav class="w-full lg:w-auto lg:h-full shadow bg-white flex lg:flex-col justify-between fixed top-0 left-0 lg:py-10">
-    <a class="flex lg:flex-col items-center justify-center logo lg:mb-4 lg:ml-0 ml-3" href="/">
+  <nav class="w-full shadow bg-white flex justify-between fixed top-0 lg:px-6 navbar"
+    :class='{ "hide-navbar": hideMenu }'>
+    <router-link class="flex items-center justify-center logo ml-3" to="/">
       <img
-        src="./../../../resources/logo.png"
+        src="./../resources/logo.png"
         alt="Roemah Seni Sarasvati"
         title="Roemah Seni Sarasvati"
-        class="logo-image lg:mb-4"
+        class="logo-image"
       />
-      <span class="font-serif text-xl lg:text-2xl ml-2 lg:ml-0 uppercase logo-text tracking-wide">
+      <span class="font-serif lg:ml-3 ml-2 text-2xl uppercase logo-text tracking-wide">
         Sarasvati
       </span>
-    </a>
+    </router-link>
     <div 
-      class="w-64 h-full menu-items lg:flex lg:flex-col lg:justify-between"
+      class="w-full menu-items lg:flex"
       :class='{ "active": mobileMenu }'>
-      <div class="menu-links mt-12">
-        <a 
-          v-for='(item, index) in $site.themeConfig.nav'
-          :href='item.link'
-          :key='index'
-          class='font-sans-alt text-3xl lg:text-2xl nav-item block text-center'
-          :class='{ "active": activeLink(item.link) }'
+      <div class="menu-links lg:flex ml-auto mr-auto">
+        <router-link
+          to='/home'
+          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          :class='{ "active": activeLink("/home") }'
         >
           <span>
-            {{ item.text }}
+            Home
           </span>
-        </a>
+        </router-link>
+        <router-link
+          to='/about_us'
+          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          :class='{ "active": activeLink("/about_us") }'
+        >
+          <span>
+            About Us
+          </span>
+        </router-link>
+        <router-link
+          to='/collections'
+          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          :class='{ "active": activeLink("/collections") }'
+        >
+          <span>
+            Collections
+          </span>
+        </router-link>
+        <router-link
+          to='/exhibitions'
+          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          :class='{ "active": activeLink("/exhibitions") }'
+        >
+          <span>
+            Exhibitions
+          </span>
+        </router-link>
+        <router-link
+          to="/blog"
+          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          :class='{ "active": activeLink("/blog") }'
+        >
+          <span>
+            Blog
+          </span>
+        </router-link>
       </div>
-      <div class="text-center uppercase text-lg text-base">
+      <div class="flex items-center uppercase text-lg text-base">
         EN / ID
       </div>
       <button class="menu-close lg:hidden"
@@ -53,33 +88,80 @@
 </template>
 
 <script>
-import { throttle } from "lodash";
-
 export default {
   data: function() {
     return {
       mobileMenu: false,
+      hideMenu: false,
+      tick: false,
+      lastScroll: 0,
+      currentScroll: 0,
     };
+  },
+
+  watch: {
+    mobileMenu: function() {
+      if (this.mobileMenu) {
+        document.body.style.height = '100vh';
+        document.body.style.overflowY = 'hidden';
+      } else {
+        document.body.style.height = 'unset';
+        document.body.style.overflowY = 'auto';
+      }
+    },
+  },
+
+  mounted: function() {
+    window.addEventListener('scroll', this.handleScroll);
   },
 
   methods: {
     activeLink: function(link) {
-      return link === this.$router.history.current.path;
-    }
+      return link === this.$route.path;
+    },
+
+    handleScroll: function() {
+      this.currentScroll = window.pageYOffset;
+      this.requestTick();
+    },
+
+    requestTick: function() {
+      if (!this.tick) {
+        requestAnimationFrame(this.updateNav);
+      }
+
+      this.tick = true;
+    },
+
+    updateNav: function() {
+      this.hideMenu = this.lastScroll < this.currentScroll;
+      this.lastScroll = this.currentScroll;
+
+      this.tick = false;
+    },
   }
 };
 </script>
 
 <style lang="postcss" scoped>
+.navbar {
+  transform: translateY(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.hide-navbar {
+  transform: translateY(-105%);
+}
+
 .logo-image {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
 
 @media screen and (min-width: 1024px) {
   .logo-image {
-    width: 72px;
-    height: 72px;
+    width: 55px;
+    height: 55px;
   }
 }
 
@@ -181,20 +263,18 @@ export default {
 }
 
 .nav-item {
-  font-weight: 350;
-
   & span {
     position: relative;
   }
 
   & span::before {
     content: '';
-    bottom: 6.5%;
+    bottom: 13.5%;
     z-index: -1;
     position: absolute;
     width: 0;
     height: 6px;
-    transition: width 300ms ease-out;
+    transition: width 200ms ease;
   }
 
   &:nth-child(2n + 1) span::before {

@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <Navbar class="nav" />
-    <Content class="p-4 content lg:pt-24 pt-20" />
-    <Footer class="foot" />
-  </div>
+    <div>
+      <Navbar class="nav"></Navbar>
+      <router-view class="pt-20"></router-view>
+      <Footer></Footer>
+    </div>
 </template>
 
 <script>
@@ -33,28 +33,13 @@ export default {
 
 <style lang="postcss" scoped>
 .nav {
-  z-index: 3;
+  z-index: 999;
 }
 
-.content {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  background-color: white;
-  margin-bottom: calc(450px + 5rem);
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
 }
-
-@media screen and (max-width: 1023px) {
-  .content {
-    margin-bottom: 0;
-  }
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
-
-@media screen and (min-width: 1024px) {
-  .foot {
-    position: fixed;
-    bottom: 0;
-  }
-}
-
 </style>

@@ -5,8 +5,8 @@
 @font-face {
     font-family: 'Lexend';
     src: local('Lexend'),
-        url('./../../../../src/resources/fonts/Lexend.woff2') format('woff2-variations'),
-        url('./../../../../src/resources/fonts/Lexend.ttf') format('truetype-variations');
+        url('./../fonts/Lexend.woff2') format('woff2-variations'),
+        url('./../fonts/Lexend.ttf') format('truetype-variations');
     unicode-range: U+00-7F;
 }
 
@@ -14,8 +14,8 @@
     font-family: 'Jost';
     font-weight: 100 900;
     src: local('Jost Variations'),
-        url('./../../../../src/resources/fonts/Jost.woff2') format('woff2-variations'),
-        url('./../../../../src/resources/fonts/Jost.ttf') format('truetype-variations');
+        url('./../fonts/Jost.woff2') format('woff2-variations'),
+        url('./../fonts/Jost.ttf') format('truetype-variations');
     unicode-range: U+00-7F;
 }
 

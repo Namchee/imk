@@ -14,8 +14,10 @@ module.exports = {
   'parserOptions': {
     'ecmaVersion': 2018,
     'sourceType': 'module',
+    'parser': 'babel-eslint',
   },
   'plugins': [
+    'babel',
     'vue',
   ],
   'rules': {
@@ -27,5 +29,13 @@ module.exports = {
       'warn',
       'windows',
     ],
+    'object-curly-spacing': [
+      'warn',
+      'always',
+    ],
+    'arrow-parens': [
+      'error',
+      'as-needed'
+    ]
   },
 };

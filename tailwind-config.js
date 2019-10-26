@@ -8,8 +8,8 @@ module.exports = {
       },
 
       screens: {
-        'wd': { 'min': '1920px' }, 
-      }
+        'wd': { 'min': '1920px' },
+      },
     },
   },
-}
+};
