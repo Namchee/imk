@@ -17,48 +17,14 @@
       :class='{ "active": mobileMenu }'>
       <div class="menu-links lg:flex ml-auto mr-auto">
         <router-link
-          to='/home'
-          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
-          :class='{ "active": activeLink("/home") }'
+          v-for='item in links'
+          :key='item.path'
+          :to='item.path'
+          class='focus:outline-none text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          :class='{ "active": activeLink(item.path) }'
         >
           <span>
-            Home
-          </span>
-        </router-link>
-        <router-link
-          to='/about_us'
-          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
-          :class='{ "active": activeLink("/about_us") }'
-        >
-          <span>
-            About Us
-          </span>
-        </router-link>
-        <router-link
-          to='/collections'
-          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
-          :class='{ "active": activeLink("/collections") }'
-        >
-          <span>
-            Collections
-          </span>
-        </router-link>
-        <router-link
-          to='/exhibitions'
-          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
-          :class='{ "active": activeLink("/exhibitions") }'
-        >
-          <span>
-            Exhibitions
-          </span>
-        </router-link>
-        <router-link
-          to="/blog"
-          class='text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
-          :class='{ "active": activeLink("/blog") }'
-        >
-          <span>
-            Blog
+            {{ item.text }}
           </span>
         </router-link>
       </div>
@@ -96,6 +62,28 @@ export default {
       tick: false,
       lastScroll: 0,
       currentScroll: 0,
+      links: [
+        {
+          path: '/home',
+          text: 'Home',
+        },
+        {
+          path: '/about_us',
+          text: 'About Us',
+        },
+        {
+          path: '/collections',
+          text: 'Collections',
+        },
+        {
+          path: '/exhibitions',
+          text: 'Exhibitions',
+        },
+        {
+          path: '/blog',
+          text: 'Blog',
+        },
+      ],
     };
   },
 

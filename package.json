@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf node_modules/ .cache/ dist/",
     "clean--cache": "rm -rf .cache/ dist/",
-    "refresh": "rm -rf node_modules/ & npm i",
+    "refresh": "rm -rf node_modules/ .cache/ dist/ & npm i",
     "dev": "parcel index.html -p 1234",
     "build": "parcel build index.html --public-url ./"
   },

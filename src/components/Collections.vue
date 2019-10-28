@@ -19,7 +19,7 @@
         class="cursor-pointer grid-item m-6"
         @click="getItemDetail(index)"
       >
-        <img :src='item.src' class="mb-2" :title="item.title" :alt="item.title" />
+        <img :src='""' :data-src='item.src' class="mb-2" :title="item.title" :alt="item.title" />
         <p class="title font-sans-alt text-xl md:text-3xl">{{ item.title }}</p>
         <p class="subtitle italic font-sans-alt">by - {{ item.author }}</p>
       </a>
@@ -33,17 +33,17 @@
 
       <div class="flex lg:flex-row flex-col items-center h-full w-full">
         <img
-          :src='detailFocus ? (detailFocus.src) : ""'
+          :src='detailFocus.detail ? detailFocus.detail.src : ""'
           class="fade-anim lg:w-5/12"
-          :class='{ "active": detailFocus !== null }'
-          :alt='detailFocus ? detailFocus.title : ""'
-          :title='detailFocus ? detailFocus.title : ""'
+          :class='{ "active": detailFocus.focus }'
+          :alt='detailFocus.detail ? detailFocus.detail.title : ""'
+          :title='detailFocus.detail ? detailFocus.detail.title : ""'
         />
         <div class="detail-text p-8 md:p-12 wd:p-20">
-          <h1 class="text-3xl md:text-4xl font-sans-alt">{{ detailFocus ? detailFocus.title : "" }}</h1>
+          <h1 class="text-3xl md:text-4xl font-sans-alt">{{ detailFocus.detail ? detailFocus.detail.title : "" }}</h1>
           <p
             class="subtitle italic font-sans-alt mb-5"
-          >by - {{ detailFocus ? detailFocus.author : "" }}</p>
+          >by - {{ detailFocus.detail ? detailFocus.detail.author : "" }}</p>
           <p
             class="md:text-lg mb-5"
           >Ini adalah karya seni yang dibuat oleh pelukis ketika ia sedang melamun memikirkan tugasnya yang menumpuk. Bukannya mengerjakan tugas, ia malah melukis. Ia pun merubah haluan dari kuli coding menjadi seniman.</p>
@@ -104,7 +104,6 @@ import images from "./../resources/collections/*.*";
 export default {
   data: function() {
     return {
-      detailFocus: null,
       imageList: [
         {
           src: images.alone.jpg,
@@ -176,7 +175,11 @@ export default {
           author: "Kevin Draven",
           content: "h3h3",
         },
-      ]
+      ],
+      detailFocus: {
+        detail: null,
+        focus: false,
+      },
     };
   },
 
@@ -187,6 +190,7 @@ export default {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
+          entry.target.firstChild.src = entry.target.firstChild.dataset.src;
           observer.unobserve(entry.target);
         }
       });
@@ -200,21 +204,24 @@ export default {
   computed: {
     detailItem: function() {
       return {
-        active: this.detailFocus !== null,
+        active: this.detailFocus.focus,
       };
     }
   },
 
   watch: {
-    detailFocus: function() {
-      if (this.detailFocus) {
-        document.body.style.height = "100vh";
-        document.body.style.overflowY = "hidden";
-      } else {
-        document.body.style.height = "unset";
-        document.body.style.overflowY = "auto";
-      }
-    }
+    detailFocus: {
+      handler: function() {
+        if (this.detailFocus.focus) {
+          document.body.style.height = "100vh";
+          document.body.style.overflowY = "hidden";
+        } else {
+          document.body.style.height = "unset";
+          document.body.style.overflowY = "auto";
+        }
+      },
+      deep: true,  
+    },
   },
 
   created: function() {
@@ -225,7 +232,10 @@ export default {
 
       for (const image of this.imageList) {
         if (id === image.id) {
-          this.detailFocus = image;
+          this.detailFocus = {
+            detail: image,
+            focus: true,
+          };
           break;
         }
       }
@@ -234,11 +244,14 @@ export default {
 
   methods: {
     getItemDetail: function(index) {
-      this.detailFocus = this.imageList[index];
+      this.detailFocus = { 
+        detail: this.imageList[index],
+        focus: true,
+      };
     },
 
     killFocus: function() {
-      this.detailFocus = null;
+      this.detailFocus.focus = false;
       this.$router.replace(this.$route.path);
     },
 
@@ -314,7 +327,7 @@ export default {
 
 .grid-item {
   display: inline-block;
-  transition: all 300ms ease-out;
+  transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 0;
   transform: translateY(65px);
 
