@@ -205,6 +205,7 @@ export default {
     & .menu-close {
       top: 0;
       right: 10px;
+      padding: 1rem;
       position: fixed;
       display: flex;
       flex-flow: column nowrap;

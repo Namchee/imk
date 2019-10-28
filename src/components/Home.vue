@@ -43,7 +43,7 @@ export default {};
 
 <style lang="postcss">
 .hero {
-  background-image: url("./../resources/banner.jpg");
+  background-image: url("./../resources/home/banner.jpg");
   width: 100%;
   height: 100vh;
   background-size: cover;

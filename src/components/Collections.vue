@@ -111,77 +111,76 @@ export default {
           id: "alone",
           title: "Alone",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images.ballerina.jpg,
           id: "ballerina",
           title: "Ballerina (1953)",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images.erotika.jpeg,
           id: "erotika",
           title: "Erotika",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images["greed-and-greed"].jpeg,
           id: "greed-and-greed",
           title: "Greed and Greed",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images["lembah-kali-urang"].jpg,
           id: "lembah-kali-urang",
           title: "Lembah Kali Urang",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images.heterotopia.jpg,
           id: "heterotopia",
           title: "Heterotopia",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images["locus-utopia"].jpg,
           id: "locus-utopia",
           title: "Locus Utopia",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images.melamun.jpg,
           id: "melamun",
           title: "Melamun",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images["revolusi-prancis"].jpg,
           id: "revolusi-prancis",
           title: "Revolusi Prancis",
           author: "Kevin Draven",
-          content: "h3h3"
+          content: "h3h3",
         },
         {
           src: images.spektral.jpg,
           id: "spektral",
           title: "Spektral",
           author: "Kevin Draven",
-          content: "h3h3"
-        }
+          content: "h3h3",
+        },
       ]
     };
   },
 
   mounted: function() {
-    const grid = document.querySelector(".grid");
     const gridItems = document.querySelectorAll('.grid-item');
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -259,7 +258,7 @@ export default {
 
 <style lang="postcss" scoped>
 .hero {
-  background-image: url("./../resources/banner-collections.jpg");
+  background-image: url("./../resources/collections/banner.jpg");
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -315,10 +314,9 @@ export default {
 
 .grid-item {
   display: inline-block;
-  transition: all 200ms ease-out;
+  transition: all 250ms ease-in-out;
   opacity: 0;
-  position: relative;
-  top: 2rem;
+  transform: translateY(75px);
 
   &:hover {
     transform: scale(1.025);
@@ -326,7 +324,7 @@ export default {
 
   &.in-view {
     opacity: 1;
-    top: 0;
+    transform: translateY(0);
   }
 }
 
@@ -359,16 +357,15 @@ export default {
   backdrop-filter: blur(4px);
   opacity: 0;
   position: fixed;
-  transition: all 200ms ease-in-out;
+  transition: all 250ms ease-in-out;
   pointer-events: none;
 
   & .detail-text {
     @for $i from 1 through 4 {
       & > *:nth-child(#{$i}) {
-        position: relative;
-        top: -10px;
+        transform: translateY(-100px);
         opacity: 0;
-        transition: all 150ms ease calc(100ms + (33ms * $i));
+        transition: all 200ms ease calc(100ms + (33ms * $i));
       }
     }
   }
@@ -379,7 +376,7 @@ export default {
 
     & .detail-text > * {
       opacity: 1;
-      top: 0;
+      transform: translateY(0);
     }
   }
 }
@@ -387,6 +384,7 @@ export default {
 .menu-close {
   top: 1rem;
   right: 2rem;
+  padding: 1rem;
   position: fixed;
   display: flex;
   flex-flow: column nowrap;
@@ -422,7 +420,7 @@ export default {
 
 .fade-anim {
   opacity: 0;
-  transition: opacity 200ms ease 50ms;
+  transition: opacity 350ms ease-in-out;
 
   &.active {
     opacity: 1;
