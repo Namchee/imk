@@ -6,7 +6,7 @@
           class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-left text-center tracking-wide mb-2"
         >Collections</h1>
         <p
-          class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic"
+          class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic slide-y-anim"
         >Discover our collections and find what you love</p>
       </div>
     </div>
@@ -181,7 +181,7 @@ export default {
   },
 
   mounted: function() {
-    const gridItems = document.querySelectorAll('.grid-item');
+    const gridItems = document.querySelectorAll('.grid-item, .slide-x-anim, .slide-y-anim');
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -314,9 +314,9 @@ export default {
 
 .grid-item {
   display: inline-block;
-  transition: all 250ms ease-in-out;
+  transition: all 300ms ease-out;
   opacity: 0;
-  transform: translateY(75px);
+  transform: translateY(65px);
 
   &:hover {
     transform: scale(1.025);
@@ -357,15 +357,15 @@ export default {
   backdrop-filter: blur(4px);
   opacity: 0;
   position: fixed;
-  transition: all 250ms ease-in-out;
+  transition: all 200ms ease-in;
   pointer-events: none;
 
   & .detail-text {
     @for $i from 1 through 4 {
       & > *:nth-child(#{$i}) {
-        transform: translateY(-100px);
+        transform: translateY(-50px);
         opacity: 0;
-        transition: all 200ms ease calc(100ms + (33ms * $i));
+        transition: all 150ms ease-out calc(50ms + (66ms * $i));
       }
     }
   }

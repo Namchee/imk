@@ -54,7 +54,8 @@ export default {};
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
   .hero {
-    height: 65vh;
+    min-height: 65vh;
+    max-height: 75vh;
   }
 }
 

@@ -42,3 +42,25 @@
 .flex-grow-full {
     flex: 100%;
 }
+
+.slide-y-anim {
+    transform: translateY(25px);
+    opacity: 0;
+    transition: all 300ms ease-out 50ms;
+
+    &.in-view {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-x-anim {
+    transform: translateX(-25px);
+    opacity: 0;
+    transition: all 300ms ease-out 50ms;
+
+    &.in-view {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
