@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full shadow bg-white flex justify-between fixed top-0 lg:px-6 navbar"
+  <nav class="w-full bg-white shadow flex justify-between fixed top-0 lg:px-6 navbar"
     :class='{ "hide-navbar": hideMenu }'>
     <router-link class="flex items-center justify-center logo ml-3" to="/">
       <img
@@ -179,7 +179,7 @@ export default {
     opacity: 0;
     display: flex;
     pointer-events: none;
-    transition: all 250ms ease;
+    transition: all 200ms ease;
 
     @for $i from 1 through 6 {
       & .menu-links a:nth-child(#{$i}) {

@@ -66,7 +66,7 @@
               />
             </svg>
           </a>
-          <a href="https://www.facebook.com" class="focus:outline-none lg:p-3 lg:rounded-full p-1 mx-2">
+          <a href="https://www.facebook.com" target="_blank" class="focus:outline-none lg:p-3 lg:rounded-full p-1 mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="white"
@@ -79,7 +79,7 @@
               />
             </svg>
           </a>
-          <a href="https://www.facebook.com" class="focus:outline-none lg:p-3 lg:rounded-full p-1 mx-2">
+          <a href="https://www.twitter.com" target="_blank" class="focus:outline-none lg:p-3 lg:rounded-full p-1 mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="white"
@@ -92,7 +92,7 @@
               />
             </svg>
           </a>
-          <a href="https://www.facebook.com" class="focus:outline-none lg:p-3 lg:rounded-full p-1 ml-2">
+          <a href="https://www.instagram.com" target="_blank" class="focus:outline-none lg:p-3 lg:rounded-full p-1 ml-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="white"

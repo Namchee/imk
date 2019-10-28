@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="card p-8 md:p-12 wd:p-16 wd:py-24">
       <h1
-        class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-left text-center tracking-wide md:mb-0 mb-2"
+        class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-left text-center tracking-wide mb-2"
       >Roemah Seni Sarasvati</h1>
       <q
         class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic mb-12 block"
@@ -43,7 +43,7 @@ export default {};
 
 <style lang="postcss">
 .hero {
-  background-image: url("./../resources/banner_alt.jpg");
+  background-image: url("./../resources/banner.jpg");
   width: 100%;
   height: 100vh;
   background-size: cover;
