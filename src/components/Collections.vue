@@ -25,7 +25,8 @@
       </a>
     </div>
 
-    <div class="details" :class="detailItem">
+    <FocusLock>
+      <div class="details" :class="detailItem">
       <button class="menu-close" @click="killFocus()">
         <span class="menu-close-icon">&times;</span>
         <span class="menu-close-label">Close</span>
@@ -95,6 +96,8 @@
         </div>
       </div>
     </div>
+    </FocusLock>
+    
   </div>
 </template>
 
