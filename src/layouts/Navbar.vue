@@ -79,10 +79,6 @@ export default {
           path: '/exhibitions',
           text: 'Exhibitions',
         },
-        {
-          path: '/blog',
-          text: 'Blog',
-        },
       ],
     };
   },
