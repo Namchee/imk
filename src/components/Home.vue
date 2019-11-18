@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="hero flex justify-center items-center">
-      <div class="hero-bg"></div>
       <div class="hero-blur-bg"></div>
       <div class="hero-content text-white flex flex-col justify-center items-center">
         <p class="uppercase sm:text-xs md:text-base font-thin tracking-widest mb-4 md:mb-0">
@@ -11,17 +10,19 @@
         <h1 class="text-5xl font-serif tracking-wide hero-banner mb-6">Sarasvati</h1>
         <a
           href="#start"
-          class="background-transparent border border-white uppercase tracking-widest py-3 px-6 start-button"
+          class="lg:block hidden background-transparent border border-white uppercase tracking-widest py-3 px-6 start-button"
         >Begin The Adventure</a>
         <div class="fade"></div>
       </div>
     </div>
 
-    <div class="flex lg:flex-row flex-col p-12 lg:p-24 lg:pt-12" id="start">
-      <div class="w-full lg:w-2/3 text-center lg:text-left mb-8 lg:mb-0">
+    <div class="flex lg:flex-row flex-col p-8 pt-0 md:pt-4 lg:p-24 lg:pt-12" id="start">
+      <div class="w-full lg:w-7/12 mb-8 lg:mb-0 lg:px-16 lg:py-4">
         <h1 class="lg:text-4xl text-3xl mb-4 font-semibold">Welcome To Roemah Seni Sarasvati!</h1>
-        <p class="mb-4">Roemah Seni Sarasvati is your number one source of art in Bandung</p>
-        <div class="text-center lg:text-left mb-12">
+        <p class="mb-4">
+          Founded in 2010, Sarasvati Art Communication &amp; Publication is dedicated towards promoting the development of Indonesian art and culture. Started as a print and online media, Sarasvati now has branched out into facilitating consultancy services, promotion, education, as well as event planning within the fields of art and culture.
+        </p>
+        <div class="mb-10">
           <p class="text-xl mb-2">Address:</p>
           <p>Sudirman Street 137</p>
           <p class="mb-5">Bandung, West Java, Indonesia</p>
@@ -49,7 +50,7 @@
           </span>
         </a>
       </div>
-      <div class="w-full lg:w-1/3">
+      <div class="w-full lg:w-5/12">
         <div class="iframe-rwd flex items-center">
           <iframe
             src="https://maps.google.com/maps?q=roemah%20seni%20sarasvati&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -81,6 +82,7 @@ export default {};
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 75%;
+  perspective: 2px;
 }
 
 .fade {
@@ -109,19 +111,14 @@ export default {};
   }
 }
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 1023px) {
   .hero {
-    min-height: 55vh;
+    min-height: 60vh;
     max-height: 65vh;
   }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
-  .hero {
-    min-height: 60vh;
-    max-height: 70vh;
-  }
-
   .hero-banner {
     font-size: 6rem;
   }
@@ -156,13 +153,14 @@ export default {};
 
 .iframe-rwd {
   position: relative;
-  padding-bottom: 65.25%;
+  padding-bottom: 100%;
   padding-top: 30px;
   height: 0;
   overflow: hidden;
 }
 
 .iframe-rwd iframe {
+  max-height: 500px;
   position: absolute;
   top: 0;
   left: 0;
