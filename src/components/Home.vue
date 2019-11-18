@@ -1,38 +1,66 @@
 <template>
-  <div class="hero">
-    <div class="card p-8 md:p-12 wd:p-16 wd:py-24">
-      <h1
-        class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-left text-center tracking-wide mb-2"
-      >Roemah Seni Sarasvati</h1>
-      <q
-        class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic mb-12 block"
-      >Your finest art source in Bandung since 2010</q>
-      <div class="text-center lg:text-left text-sm md:text-xl font-sans-alt mb-12">
-        <p>Sudirman Street 137</p>
-        <p class="mb-5">Bandung, West Java, Indonesia</p>
-        <p class="md:text-lg font-sans-alt">Open Daily 10 AM &ndash; 9 PM</p>
+  <div>
+    <div class="hero flex justify-center items-center">
+      <div class="hero-bg"></div>
+      <div class="hero-blur-bg"></div>
+      <div class="hero-content text-white flex flex-col justify-center items-center">
+        <p class="uppercase sm:text-xs md:text-base font-thin tracking-widest mb-4 md:mb-0">
+          <span>Roemah</span>
+          <span>Seni</span>
+        </p>
+        <h1 class="text-5xl font-serif tracking-wide hero-banner mb-6">Sarasvati</h1>
+        <a
+          href="#start"
+          class="background-transparent border border-white uppercase tracking-widest py-3 px-6 start-button"
+        >Begin The Adventure</a>
+        <div class="fade"></div>
       </div>
-      <a
-        href="https://goo.gl/maps/GAJDpWHvs8Jk7u5X6"
-        target="_blank"
-        class="inline-flex dir border border-black p-3 px-10 uppercase"
-      >
-        <span class="font-sans-alt">Show me the way</span>
-        <span class="arrow">
-          <svg
-            width="24"
-            height="24"
-            xmlns="http://www.w3.org/2000/svg"
-            class="fill-current"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-          >
-            <path
-              d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
-            />
-          </svg>
-        </span>
-      </a>
+    </div>
+
+    <div class="flex lg:flex-row flex-col p-12 lg:p-24 lg:pt-12" id="start">
+      <div class="w-full lg:w-2/3 text-center lg:text-left mb-8 lg:mb-0">
+        <h1 class="lg:text-4xl text-3xl mb-4 font-semibold">Welcome To Roemah Seni Sarasvati!</h1>
+        <p class="mb-4">Roemah Seni Sarasvati is your number one source of art in Bandung</p>
+        <div class="text-center lg:text-left mb-12">
+          <p class="text-xl mb-2">Address:</p>
+          <p>Sudirman Street 137</p>
+          <p class="mb-5">Bandung, West Java, Indonesia</p>
+          <p class>Open Daily 10 AM &ndash; 9 PM</p>
+        </div>
+        <a
+          href="https://goo.gl/maps/GAJDpWHvs8Jk7u5X6"
+          target="_blank"
+          class="inline-flex dir border border-black p-3 px-10 uppercase"
+        >
+          <span>Show me the way</span>
+          <span class="arrow">
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              class="fill-current"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+      <div class="w-full lg:w-1/3">
+        <div class="iframe-rwd flex items-center">
+          <iframe
+            src="https://maps.google.com/maps?q=roemah%20seni%20sarasvati&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            align="middle"
+          ></iframe>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,45 +78,52 @@ export default {};
   position: relative;
   display: flex;
   align-items: center;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 75%;
+}
+
+.fade {
+  position: absolute;
+  bottom: 0px;
+
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 25%
+  );
+}
+
+.hero-content {
+  margin-top: -1rem;
+}
+
+@media screen and (min-width: 1023px) {
+  .hero-banner {
+    font-size: 128px !important;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .hero {
+    min-height: 55vh;
+    max-height: 65vh;
+  }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
   .hero {
-    min-height: 65vh;
-    max-height: 75vh;
-  }
-}
-
-.card {
-  position: relative;
-  width: 65%;
-  z-index: 1;
-
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-color: rgba(255, 255, 255, 0.65);
-    opacity: 1;
-    filter: blur(2px);
-    backdrop-filter: blur(5px);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 60vh;
+    max-height: 70vh;
   }
 
-  .hero {
-    justify-content: center;
+  .hero-banner {
+    font-size: 6rem;
   }
 }
 
@@ -116,6 +151,33 @@ export default {};
       left: 80%;
       opacity: 1;
     }
+  }
+}
+
+.iframe-rwd {
+  position: relative;
+  padding-bottom: 65.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe-rwd iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.start-button {
+  transition: all 350ms ease-in-out;
+  outline: none;
+
+  &:hover {
+    background-color: rgb(250, 250, 250);
+    color: #212121;
+    outline: 1px solid white;
   }
 }
 </style>

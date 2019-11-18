@@ -37,12 +37,13 @@
         <div class="flex lg:flex-row flex-col items-center h-full w-full">
           <img
             :src='detailFocus.detail ? detailFocus.detail.src : ""'
-            class="fade-anim lg:w-5/12"
+            class="fade-anim lg:w-5/12 drift-zoom"
             :class='{ "active": detailFocus.focus }'
             :alt='detailFocus.detail ? detailFocus.detail.title : ""'
             :title='detailFocus.detail ? detailFocus.detail.title : ""'
           />
           <div class="detail-text p-8 md:p-12 wd:p-20">
+            <div class="drift-container"></div>
             <h1
               class="text-3xl md:text-4xl font-sans-alt"
             >{{ detailFocus.detail ? detailFocus.detail.title : "" }}</h1>
@@ -400,10 +401,14 @@ export default {
 }
 @media screen and (max-width: 1023px) {
   .menu-close {
-    padding: 0.5rem;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    padding: 0rem;
     right: 1rem;
     font-size: 1rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 9999px;
     & .menu-close-label {
       display: none;
     }

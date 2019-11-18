@@ -3,11 +3,11 @@
     <div class="hero">
       <div class="card p-8 md:p-12 wd:p-16 wd:py-24">
         <h1
-          class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-left text-center tracking-wide mb-2"
+          class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-right text-center tracking-wide mb-2"
         >Exhibitions</h1>
         <p
-          class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic slide-y-anim"
-        >Discover our collections and find what you love</p>
+          class="md:text-xl wd:text-2xl text-center md:text-right font-serif italic slide-y-anim"
+        >Set you art journery anew</p>
       </div>
     </div>
     <div class="pt-4 lg:px-24 px-4">
@@ -333,7 +333,7 @@ export default {
 
 <style lang="postcss" scoped>
 .hero {
-  background-image: url("./../resources/collections/banner.jpg");
+  background-image: url("./../resources/exhibitions/banner.jpg");
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -367,7 +367,8 @@ export default {
 }
 
 .card {
-  position: relative;
+  position: absolute;
+  right: 0;
   width: 65%;
   z-index: 1;
 
@@ -388,7 +389,8 @@ export default {
 
 @media screen and (max-width: 768px) {
   .card {
-    width: 90%;
+    width: 85%;
+    right: unset;
     display: flex;
     flex-direction: column;
     align-items: center;
