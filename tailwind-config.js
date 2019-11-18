@@ -4,7 +4,7 @@ module.exports = {
       colors: {
         light1: '#FF9117',
         light2: '#1E89DD',
-        dark2: '#313131',
+        dark2: '#262626',
       },
 
       screens: {

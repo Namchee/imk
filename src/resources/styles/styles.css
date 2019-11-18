@@ -2,29 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Lexend';
-    src: local('Lexend'),
-        url('./../fonts/Lexend.woff2') format('woff2-variations'),
-        url('./../fonts/Lexend.ttf') format('truetype-variations');
-    unicode-range: U+00-7F;
+html,
+body {
+    scroll-behavior: smooth;
+    color: #212121;
 }
 
 @font-face {
-    font-family: 'Jost';
+    font-family: 'Inter';
     font-weight: 100 900;
-    src: local('Jost Variations'),
-        url('./../fonts/Jost.woff2') format('woff2-variations'),
-        url('./../fonts/Jost.ttf') format('truetype-variations');
+    src: local('Inter Variations'),
+        url('./../fonts/Inter.otf') format('truetype-variations');
     unicode-range: U+00-7F;
+    font-feature-settings: 'cv05'1;
 }
 
 .font-loaded body {
-    font-family: 'Jost', system-ui;
-}
-
-.font-loaded .font-sans-alt {
-    font-family: 'Lexend', system-ui;
+    font-family: 'Inter', system-ui;
 }
 
 .flex-grow-half {
@@ -44,7 +38,7 @@
 }
 
 .slide-y-anim {
-    transform: translateY(25px);
+    transform: translateY(50px);
     opacity: 0;
     transition: all 300ms ease-out 50ms;
 
@@ -55,7 +49,7 @@
 }
 
 .slide-x-anim {
-    transform: translateX(-25px);
+    transform: translateX(-50px);
     opacity: 0;
     transition: all 300ms ease-out 50ms;
 
@@ -63,4 +57,62 @@
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+.line-x-anim-right {
+    &::after {
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: -1px;
+        content: '';
+        vertical-align: middle;
+        background: #212121;
+        width: 175px;
+        height: 1px;
+        transform: scaleX(0);
+        transition: transform 750ms ease-in-out 100ms;
+        transform-origin: 0% 0%;
+    }
+
+
+    &.in-view::after {
+        transform: scaleX(1);
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .line-x-anim-right::after {
+        width: 100px;
+    }
+}
+
+.line-x-anim-left {
+    &::before {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: -1px;
+        content: '';
+        vertical-align: middle;
+        background: #212121;
+        width: 175px;
+        height: 1px;
+        transform: scaleX(0);
+        transition: transform 750ms ease-in-out 100ms;
+        transform-origin: 100% 0%;
+    }
+
+
+    &.in-view::before {
+        transform: scaleX(1);
+    }
+}
+
+.anim-slow {
+    transition-duration: 500ms;
+    animation-duration: 500ms;
+}
+
+.anim-extra-slow {
+    transition-duration: 750ms;
+    animation-duration: 750ms;
 }

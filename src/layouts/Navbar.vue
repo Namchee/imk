@@ -20,7 +20,7 @@
           v-for='item in links'
           :key='item.path'
           :to='item.path'
-          class='focus:outline-none text-3xl font-sans-alt lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          class='focus:outline-none text-3xl font-medium lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
           :class='{ "active": activeLink(item.path) }'
         >
           <span>
@@ -93,6 +93,10 @@ export default {
         document.body.style.overflowY = 'auto';
       }
     },
+
+    $route: function() {
+      this.mobileMenu = false;
+    },
   },
 
   mounted: function() {
@@ -101,7 +105,8 @@ export default {
 
   methods: {
     activeLink: function(link) {
-      return link === this.$route.path;
+      return link === this.$route.path ||
+        this.$route.path.startsWith(link);
     },
 
     handleScroll: function() {
@@ -128,7 +133,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.navbar {
+.navbar, .navbar:focus-within {
+  background-color: rgba(255, 255, 255, 0.975);
   transform: translateY(0);
   transition: transform 250ms ease-in-out;
 }
@@ -206,8 +212,8 @@ export default {
       }
     }
 
-    & .menu-links {
-      margin-top: 1rem;
+    & .menu-links > a {
+      margin: .8rem;
     }
   }
 }
@@ -254,33 +260,23 @@ export default {
 
   & span::before {
     content: '';
-    bottom: 13.5%;
+    bottom: -5%;
     z-index: -1;
     position: absolute;
-    width: 0;
-    height: 6px;
-    transition: width 200ms ease;
-  }
-
-  &:nth-child(2n + 1) span::before {
     left: -5%;
-    background-color: rgb(255, 227, 202);
+    width: 110%;
+    height: 3.5px;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: transform 250ms ease-in-out;
+    background: #2121217e;
   }
 
-  &:nth-child(2n) span::before {
-    right: -5%;
-    background-color: rgb(208, 240, 255);
-  }
-
-  &:nth-child(2n + 1):hover,
-  &:nth-child(2n + 1):focus,
-  &:nth-child(2n + 1).active,
-  &:nth-child(2n):hover,
-  &:nth-child(2n):focus,
-  &:nth-child(2n).active {
-    & span::before {
-      width: 110%;
-    }
+  &.active span::before,
+  &:hover span::before,
+  &:focus span::before,
+  &:active span::before {
+    transform: scaleX(1);
   }
 }
 </style>

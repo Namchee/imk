@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "title": "Kinesthesia",
+            "id": "kinesthesia",
+            "place": "Roemah Seni Sarasvati",
+            "curator": "Dylan Gebbia Richards",
+            "startDate": "2019-11-17",
+            "endDate": "2019-12-31",
+            "folder": "exhibition1",
+            "desc": "Colorado-based artist Dylan Gebbia-Richards, brings insight into his transcendent works in which the organic is appropriated by the artificial. Gebbia-Richards' works become landscapes - organic protrusions that seem to escape from the canvas. The artist embarks on a discovery of the physical manifestations of his scientific background. His geological creations, reminiscent of the landscape in Gebbia-Richards’ hometown, demand the space they inhabit in a similar way that agriculture might scale and dominate a building if left to its own devices.\nGebbia-Richards’ practice explores the synthesis and artificiality of human-made environments, and how colour and scale work alongside one another to captivate the viewer. The artist combines melted paraffin wax with pigments; by making his paints, Gebbia-Richards fabricates a sense of control over the otherwise erratic pieces. The unpredictability of his process ultimately wins the battle, rendering his pieces all the more intriguing as it mirrors our inability to control and dominate the elements.\nAs chance takes over, Gebbia-Richards’ works viewers to lose themselves within an unmarked, chaos-ridden territory. In the ever-growing turbulence of environmental concern, Gebbia-Richards’ use of colour and installation allude to themes of 1960s sci-fi resurgence and psychedelia - all of which appeal to societal cries for escapism. The vibrant colours are potently hallucinogenic, transporting viewers to alternate headspaces. Gebbia-Richards’ enthrallment with topography, paired with synesthesia creates a sense of endless continuation. Gebbia-Richards intently observes the metamorphosis of the natural world around us. His practice enables viewers to peer into the intricacies and immensities of the landscapes we overlook. His works challenge audiences to at once seek and submit to its overwhelming prominence and to respect its immersive supremacy."
+        },
+        {
+            "title": "Nothing New Under The Sun",
+            "id": "nothing-new-under-the-sun",
+            "place": "Roemah Seni Sarasvati",
+            "curator": "Ryan Hewett",
+            "startDate": "2019-12-31",
+            "endDate": "2020-02-02",
+            "folder": "exhibition2",
+            "desc": "This new body of work by Ryan Hewett is a continuation of themes explored in his London exhibition New Paintings, with increasingly dehumanised figures portrayed in utopian, yet isolating landscapes. With strong allusions to Francis Bacon’s prophetic utopian vision of Atlantis, Hewett's new exhibition at The Goss-Michael Foundation in Dallas poses questions as to what the future of humanity holds.\nIt is left for the viewer to ponder existential questions about the nature of human existence and our relationship with the bounty of the natural world. As human figures are reduced to animalistic likenesses, and beautiful, but barren landscapes murmur with signs of distant life, Hewett imagines the uncharted future of our species and planet with a distinct impartiality as to whether we should be hopeful, or fearful, of our future."
+        },
+        {
+            "title": "Rewild",
+            "id": "rewild",
+            "place": "Roemah Seni Sarasvati",
+            "curator": "Mr. Jago",
+            "startDate": "2019-11-02",
+            "endDate": "2019-11-15",
+            "folder": "exhibition3",
+            "desc": "Duncan Jago’s career as Mr. Jago began as a formative artist in Bristol’s acclaimed graffiti scene. He initiated the Scrawl movement, a school of street art that elected members based on their abilities with line, movement, and narrative composition. Jago was featured in the seminal, eponymous book Scrawl published in 1999.\nHaving studied illustration at the University of the West of England, Mr. Jago’s style, initially heavily illustrative, has evolved into something far more abstracted and expressive. Mr. Jago has taken the idioms of spray painting to a level of sophistication rarely seen in the medium; there is maturity and depth to his use of colour which he uses to describe the natural world and the cosmos, as he says, “a love of nature has been the biggest influence [on my work], the forms and flows that exist within it seem to be appearing … more and more nowadays.”\nThe intensity of the colours, textures and forms within Jago’s work reflect the interconnectedness of people with the latitude of nature. His dismissal of traditional art conventions and practices allow the flow of paint to determine the final result that we see. Furthermore, Jago’s abstract and unique style emphasise his interests and concerns for warfare, biosphere and climate change. It is through Jago’s abstracted and expressive style that demonstrate the accessibility and openness of his works."
+        },
+        {
+            "title": "It's Her Factory!",
+            "id": "its-her-factory",
+            "place": "Roemah Seni Sarasvati",
+            "curator": "Helen Beard",
+            "startDate": "2019-10-24",
+            "endDate": "2019-10-31",
+            "folder": "exhibition4",
+            "desc": "It's Her Factory showcases Beard’s large-scale vibrant works, exploring sexual acts and the broader context of relationships. Beard’s colour-field, oil paintings of subverted and re-drawn pornographic material take back ownership of sexual imagery from the predominantly male gaze. The show at Roemah Seni Sarasvati follows the artist’s widely acclaimed True Colours exhibition at Damien Hirst’s Newport Street Gallery, and will mark her return to Roemah Seni Sarasvati following her inclusion in the critically acclaimed group exhibition 21st Century Women."
+        }
+    ]
+}

@@ -106,7 +106,7 @@
           <a
             href="https://www.instagram.com"
             target="_blank"
-            class="focus:outline-none lg:p-3 lg:rounded-full p-1 ml-2"
+            class="focus:outline-none lg:p-3 lg:rounded-full p-1 mx-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

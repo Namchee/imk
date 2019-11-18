@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import FontFaceObserver from "fontfaceobserver";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import FontFaceObserver from 'fontfaceobserver';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default {
   components: {
@@ -23,10 +23,9 @@ export default {
   },
 
   mounted: function() {
-    const lexend = new FontFaceObserver("Lexend");
-    const jost = new FontFaceObserver("Jost");
+    const inter = new FontFaceObserver('Inter');
 
-    Promise.all([lexend.load(), jost.load()]).then(() => {
+    Promise.all([inter.load()]).then(() => {
       document.documentElement.className += "font-loaded";
     });
   },
@@ -40,9 +39,10 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.3s;
+  transition-duration: 350ms;
   transition-property: opacity;
-  transition-timing-function: ease;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
 }
 
 .fade-enter,

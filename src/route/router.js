@@ -5,11 +5,25 @@ const Layout = () => import('./../layouts/Layout');
 const Home = () => import('./../components/Home');
 const About = () => import('./../components/About');
 const Collections = () => import('./../components/Collections');
+const Exhibition = () => import('./../components/Exhibition');
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    if (to.path === '/collections') {
+      return;
+    }
+
+    if (to.hash) {
+      return { selector: to.hash };
+    } else if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { x: 0, y: 0 };
+    }
+  },
   routes: [
     {
       path: '/',
@@ -32,7 +46,14 @@ export default new Router({
           component: Collections,
           name: 'Collections',
         },
+        {
+          path: '/exhibitions',
+          component: Exhibition,
+          name: 'Exhibition',
+        },
       ],
     },
   ],
 });
+
+export default router;

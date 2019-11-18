@@ -13,7 +13,11 @@
   "author": "Cristopher Namchee, Kevin Draven Kenanga",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^2.7.0",
+    "focus-trap": "^5.1.0",
+    "focus-trap-vue": "0.0.4",
     "fontfaceobserver": "^2.1.0",
+    "parcel-plugin-static-files-copy": "^2.2.1",
     "regenerator-runtime": "^0.13.3",
     "tailwindcss": "^1.1.2",
     "vue": "^2.6.10",
@@ -44,5 +48,9 @@
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.esm.js"
+  },
+  "staticFiles": {
+    "staticPath": "./src/resources",
+    "watcherGlob": "**"
   }
 }

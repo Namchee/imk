@@ -12,14 +12,14 @@
     </div>
 
     <div class="article p-4 lg:p-12">
-      <div class="p-6 lg:p-12 wd:p-16 text-lg">
+      <div class="p-6 lg:p-12 wd:p-16">
         <h1 class="text-3xl lg:text-5xl font-sans-alt mb-3 lg:mb-8">Sarasvati?</h1>
         <p
           class="mb-6 slide-y-anim"
         >Roemah Seni Sarasvati (RSS) is a gallery located on Jl. Jendral Sudirman 137, Bandung. RSS is the main project of Sarasvati Arts Management which was built with the aim of introducing a variety of cultural arts and diversity. RSS is also a place for exchanging ideas and concerns to create a unique identity for the city of Bandung and nurture creativity and knowledge.</p>
         <p class="slide-y-anim">One work program that is being designed is the Grote Postweg Art Project.</p>
       </div>
-      <div class="p-6 lg:p-12 wd:p-16 text-lg">
+      <div class="p-6 lg:p-12 wd:p-16">
         <h1 class="font-sans-alt text-3xl lg:text-5xl mb-3 lg:mb-8">Vision and Mission</h1>
         <ol class="px-4 list-decimal text-justify">
           <li class="slide-y-anim">To introduce a variety of cultural arts through various quality works of art.</li>
@@ -36,7 +36,7 @@
         title="Bandung Tempoe Doeloe"
         class="w-full lg:w-5/12 bg-contain slide-x-anim"
       />
-      <div class="p-8 md:p-12 flex flex-col justify-center text-lg w-full lg:w-7/12">
+      <div class="p-8 md:p-12 flex flex-col justify-center w-full lg:w-7/12">
         <h1
           class="font-sans-alt text-3xl lg:text-5xl mb-4 lg:mb-5 lg:text-left text-center"
         >Our History</h1>
