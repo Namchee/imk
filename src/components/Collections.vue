@@ -21,7 +21,9 @@
         class="cursor-pointer grid-item m-6"
         @click="getItemDetail(index)"
       >
-        <img :src="item.src" class="mb-2" :title="item.title" :alt="item.title" />
+        <div class="image-box">
+          <img :src="item.src" class="mb-2" :title="item.title" :alt="item.title" />
+        </div>
         <p class="title font-sans-alt text-xl md:text-3xl">{{ item.title }}</p>
         <p class="subtitle italic font-sans-alt">by - {{ item.author }}</p>
       </a>
@@ -106,7 +108,7 @@
 </template>
 
 <script>
-import images from "./../resources/collections/*.*";
+import images from './../resources/collections/*.*';
 import { FocusTrap } from 'focus-trap-vue';
 
 export default {
@@ -194,12 +196,14 @@ export default {
       }
     };
   },
-  mounted: function() {
+
+  mounted: function() { 
     window.scrollTo(0, 0);
 
     const gridItems = document.querySelectorAll(
       ".grid-item, .slide-x-anim, .slide-y-anim"
     );
+
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -208,10 +212,12 @@ export default {
         }
       });
     });
+
     gridItems.forEach(item => {
       observer.observe(item);
     });
   },
+
   computed: {
     detailItem: function() {
       return {
@@ -219,6 +225,7 @@ export default {
       };
     }
   },
+
   watch: {
     detailFocus: {
       handler: function() {
@@ -233,6 +240,7 @@ export default {
       deep: true
     }
   },
+
   created: function() {
     const hash = this.$route.hash;
     if (hash) {
@@ -248,6 +256,7 @@ export default {
       }
     }
   },
+
   methods: {
     getItemDetail: function(index) {
       this.detailFocus = {
@@ -255,10 +264,12 @@ export default {
         focus: true
       };
     },
+
     killFocus: function() {
       this.detailFocus.focus = false;
       this.$router.replace(this.$route.path);
     },
+
     copyToClipboard: function() {
       const self = this;
       navigator.clipboard.writeText(window.location.href).then(function() {
@@ -323,7 +334,6 @@ export default {
 }
 .grid-item {
   display: inline-block;
-  transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 0;
   transform: translateY(75px);
 
@@ -333,25 +343,25 @@ export default {
   }
 }
 
-.grid-item:hover {
-  transform: scale(1.035);
-}
 @media screen and (max-width: 768px) {
   .grid {
     column-gap: 1rem;
     column-count: 2;
   }
 }
+
 @media screen and (max-width: 639px) {
   .grid {
     column-count: 1;
   }
 }
+
 @media screen and (min-width: 1920px) {
   .grid {
     column-count: 4;
   }
 }
+
 .details {
   width: 100%;
   height: 100%;
@@ -382,6 +392,7 @@ export default {
     }
   }
 }
+
 .menu-close {
   top: 1rem;
   right: 2rem;
@@ -399,6 +410,7 @@ export default {
     font-size: 2rem;
   }
 }
+
 @media screen and (max-width: 1023px) {
   .menu-close {
     height: 30px;
@@ -417,19 +429,33 @@ export default {
     }
   }
 }
+
 .fade-anim {
   opacity: 0;
-  transition: opacity 350ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
   &.active {
     opacity: 1;
   }
 }
+
 .links > * {
   background: rgba(0, 0, 0, 0);
   transition: background 200ms;
   &:hover,
   &:focus {
     background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.image-box {
+  overflow: hidden;
+  
+  & img {
+    transition: transform 500ms ease-out;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
   }
 }
 </style>

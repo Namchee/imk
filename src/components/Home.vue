@@ -9,29 +9,9 @@
         </p>
         <h1 class="text-5xl font-serif tracking-wide hero-banner mb-6">Sarasvati</h1>
         <a
-          href="#start"
-          class="lg:block hidden background-transparent border border-white uppercase tracking-widest py-3 px-6 start-button"
-        >Begin The Adventure</a>
-        <div class="fade"></div>
-      </div>
-    </div>
-
-    <div class="flex lg:flex-row flex-col p-8 pt-0 md:pt-4 lg:p-24 lg:pt-12" id="start">
-      <div class="w-full lg:w-7/12 mb-8 lg:mb-0 lg:px-16 lg:py-4">
-        <h1 class="lg:text-4xl text-3xl mb-4 font-semibold">Welcome To Roemah Seni Sarasvati!</h1>
-        <p class="mb-4">
-          Founded in 2010, Sarasvati Art Communication &amp; Publication is dedicated towards promoting the development of Indonesian art and culture. Started as a print and online media, Sarasvati now has branched out into facilitating consultancy services, promotion, education, as well as event planning within the fields of art and culture.
-        </p>
-        <div class="mb-10">
-          <p class="text-xl mb-2">Address:</p>
-          <p>Sudirman Street 137</p>
-          <p class="mb-5">Bandung, West Java, Indonesia</p>
-          <p class>Open Daily 10 AM &ndash; 9 PM</p>
-        </div>
-        <a
           href="https://goo.gl/maps/GAJDpWHvs8Jk7u5X6"
           target="_blank"
-          class="inline-flex dir border border-black p-3 px-10 uppercase"
+          class="inline-flex dir border-2 border-white p-3 px-10 uppercase"
         >
           <span>Show me the way</span>
           <span class="arrow">
@@ -49,28 +29,92 @@
             </svg>
           </span>
         </a>
+        <div class="fade"></div>
+      </div>
+    </div>
+
+    <div class="flex lg:flex-row flex-col p-8 pt-0 md:pt-4 lg:p-20 slide-y-anim anim-slow">
+      <div class="w-full lg:w-7/12 mb-8 lg:mb-0 lg:px-16 lg:py-4 lg:mr-32">
+        <h1
+          class="lg:text-5xl text-3xl mb-4 font-medium font-serif"
+        >Welcome To Roemah Seni Sarasvati!</h1>
+        <p
+          class="mb-12"
+        >Founded in 2010, Sarasvati Art Communication &amp; Publication is dedicated towards promoting the development of Indonesian art and culture. Started as a print and online media, Sarasvati now has branched out into facilitating consultancy services, promotion, education, as well as event planning within the fields of art and culture.</p>
+        <router-link
+          to="/about_us"
+          class="inline-flex border border-black p-3 px-10 uppercase cta"
+        >About us</router-link>
       </div>
       <div class="w-full lg:w-5/12">
-        <div class="iframe-rwd flex items-center">
+        <div class="iframe-rwd flex items-center p-12">
           <iframe
             src="https://maps.google.com/maps?q=roemah%20seni%20sarasvati&t=&z=13&ie=UTF8&iwloc=&output=embed"
             frameborder="0"
             scrolling="no"
             marginheight="0"
             marginwidth="0"
-            align="middle"
+            align="bottom"
           ></iframe>
         </div>
       </div>
+    </div>
+
+    <div class="grid text-white">
+      <div class="content bg-dark2 p-16 px-64">
+        <h1 class="font-serif lg:text-5xl text-3xl mb-4">
+          Our Collections
+        </h1>
+        <p>
+          Discover our latest collections and find what you truly love
+        </p>
+      </div>
+      <div class="carousel mt-2">
+        <hooper :itemsToShow="3">
+          <slide class="flex justify-center items-center">
+            slide 1
+          </slide>
+          <slide class="flex justify-center items-center text-black">slide 2</slide>
+          <slide>...</slide>
+        </hooper>
+      </div>
+    </div>
+
+    <div class="lg:p-20 p-4">
+      <h1 class="text-3xl lg:text-6xl font-serif text-center">Come and Join The Fray</h1>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { Hooper, Slide } from 'hooper';
+// import images from "./../resources/collections/*.*";
+import 'hooper/dist/hooper.css';
+
+export default {
+  components: {
+    Hooper,
+    Slide,
+  },
+
+  mounted: function() {
+    const gridItems = document.querySelectorAll(".slide-x-anim, .slide-y-anim");
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    gridItems.forEach(item => {
+      observer.observe(item);
+    });
+  }
+};
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .hero {
   background-image: url("./../resources/home/banner.jpg");
   width: 100%;
@@ -82,7 +126,6 @@ export default {};
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 75%;
-  perspective: 2px;
 }
 
 .fade {
@@ -141,7 +184,7 @@ export default {};
   &:hover,
   &:active {
     & span:first-child {
-      transform: translateX(-15px);
+      transform: translateX(-20px);
     }
 
     & .arrow {
@@ -160,7 +203,7 @@ export default {};
 }
 
 .iframe-rwd iframe {
-  max-height: 500px;
+  max-height: 400px;
   position: absolute;
   top: 0;
   left: 0;
@@ -168,14 +211,46 @@ export default {};
   height: 100%;
 }
 
-.start-button {
-  transition: all 350ms ease-in-out;
-  outline: none;
+.cta {
+  transition: all 250ms ease-out;
+  font-weight: 450;
 
-  &:hover {
-    background-color: rgb(250, 250, 250);
-    color: #212121;
-    outline: 1px solid white;
+  &:hover,
+  &:active {
+    color: white;
+    background: #212121;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6fr 3fr 3fr;
+
+  & .content {
+    grid-row: 1 / 3;
+    grid-column: 1;
+  }
+
+  & .carousel {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+}
+
+.hooper-track {
+  & li {
+    position: relative;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  
+  & li:nth-child(2n + 1) {
+    top: -3rem;
+  }
+
+  & li:nth-child(2n) {
+    top: 3rem;
   }
 }
 </style>

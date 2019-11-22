@@ -21,7 +21,7 @@
           :key='item.path'
           :to='item.path'
           class='focus:outline-none text-3xl font-medium lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
-          :class='{ "active": activeLink(item.path) }'
+          :class='{ "active": activeLink(item) }'
         >
           <span>
             {{ item.text }}
@@ -66,6 +66,7 @@ export default {
         {
           path: '/home',
           text: 'Home',
+          alias: '/',
         },
         {
           path: '/about_us',
@@ -105,8 +106,8 @@ export default {
 
   methods: {
     activeLink: function(link) {
-      return link === this.$route.path ||
-        this.$route.path.startsWith(link);
+      return link.path === this.$route.path ||
+        link.alias === this.$route.path;
     },
 
     handleScroll: function() {

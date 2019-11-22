@@ -125,11 +125,12 @@ body {
         font-size: 8vw;
         line-height: 1;
         margin: 0;
+        opacity: 0;
         padding: 1.25rem 2rem;
         color: #49968d;
         text-transform: uppercase;
         animation: fadeIn 0s 0.6s;
-        animation-fill-mode: backwards;
+        animation-fill-mode: forwards;
     }
 
     &::after {

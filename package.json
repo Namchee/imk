@@ -17,6 +17,7 @@
     "focus-trap": "^5.1.0",
     "focus-trap-vue": "0.0.4",
     "fontfaceobserver": "^2.1.0",
+    "hooper": "^0.3.4",
     "parcel-plugin-static-files-copy": "^2.2.1",
     "regenerator-runtime": "^0.13.3",
     "tailwindcss": "^1.1.2",
