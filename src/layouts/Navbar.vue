@@ -20,7 +20,7 @@
           v-for='item in links'
           :key='item.path'
           :to='item.path'
-          class='focus:outline-none text-3xl font-medium lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
+          class='nav-item focus:outline-none text-3xl font-medium lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
           :class='{ "active": activeLink(item) }'
         >
           <span>
@@ -81,6 +81,7 @@ export default {
           text: 'Exhibitions',
         },
       ],
+      navbar: null,
     };
   },
 
@@ -97,11 +98,16 @@ export default {
 
     $route: function() {
       this.mobileMenu = false;
+    
+      this.navbar.forEach(element => {
+        element.blur();
+      });
     },
   },
 
   mounted: function() {
     window.addEventListener('scroll', this.handleScroll);
+    this.navbar = document.querySelectorAll('.nav-item');
   },
 
   methods: {

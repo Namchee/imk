@@ -51,7 +51,7 @@
     </div>
 
     <div class="my-12">
-      <h1 class="text-center text-3xl lg:text-5xl font-sans-alt lg:mb-8">Our Facilities</h1>
+      <h1 class="text-center text-3xl lg:text-5xl font-sans-alt lg:mb-8 line-x-anim-left line-x-anim-right line-x-half-width">Our Facilities</h1>
       <div
         class="w-full card-anim flex lg:flex-row flex-col p-4 md:px-20 lg:px-6 justify-around lg:items-stretch items-center"
       >
@@ -63,7 +63,7 @@
             title="Archive and Art Gallery"
           />
           <div class="px-6 py-4">
-            <div class="font-bold font-sans-alt text-2xl mb-6">Archive &amp; Art Gallery</div>
+            <div class="font-semibold text-2xl mb-6">Archive &amp; Art Gallery</div>
             <p
               class="mb-4"
             >Roemah Seni Sarasvati provides knowledge to the public, especially the younger generation, about the History of the City of Bandung.</p>
@@ -81,14 +81,14 @@
             title="Exhibition and Discussion Room"
           />
           <div class="px-6 py-4">
-            <div class="font-bold font-sans-alt text-2xl mb-6">Exhibition &amp; Discussion Room</div>
+            <div class="font-semibold text-2xl mb-6">Exhibition &amp; Discussion Room</div>
             <p>The room at Roemah Seni Sarasvati can be used by the community to process ideas and ideas, such as meetings, discussions, workshops and seminars.</p>
           </div>
         </div>
         <div class="card lg:max-w-lg lg:mx-8 lg:my-0 my-4 rounded-lg overflow-hidden shadow-lg">
           <img class="w-full" src="./../resources/about/pic_4.jpg" alt="Art Cafe" title="Art Cafe" />
           <div class="px-6 py-4">
-            <div class="font-bold font-sans-alt text-2xl mb-6">Art Cafe</div>
+            <div class="font-semibold text-2xl mb-6">Art Cafe</div>
             <p
               class="mb-4"
             >The cafe at Roemah Seni Sarasvati offers tranquility amidst the noise of the city. The community can enjoy delicious West Javanese traditional dishes, such as bamboo rice, roasted rice, carp soup and other interesting menus.</p>
@@ -112,7 +112,7 @@ export default {
       });
     });
 
-    const elems = document.querySelectorAll(".slide-y-anim, .slide-x-anim, .card-anim");
+    const elems = document.querySelectorAll(".slide-y-anim, .slide-x-anim, .card-anim, .line-x-anim-left, .line-x-anim-right");
 
     elems.forEach(elem => {
       observer.observe(elem);

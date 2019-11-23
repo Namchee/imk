@@ -11,8 +11,8 @@
       </div>
     </div>
     <h1
-      class="p-12 pb-0 font-sans-alt text-center text-2xl md:text-4xl"
-    >&mdash; Our Collections &mdash;</h1>
+      class="p-12 pb-0 slide-y-anim line-x-anim-left line-x-anim-right line-x-width-half text-center text-2xl md:text-4xl"
+    >Our Collections</h1>
     <div class="grid p-4 md:p-8">
       <a
         v-for="(item, index) in imageList"
@@ -108,8 +108,8 @@
 </template>
 
 <script>
-import images from './../resources/collections/*.*';
-import { FocusTrap } from 'focus-trap-vue';
+import images from "./../resources/collections/*.*";
+import { FocusTrap } from "focus-trap-vue";
 
 export default {
   components: {
@@ -197,11 +197,11 @@ export default {
     };
   },
 
-  mounted: function() { 
+  mounted: function() {
     window.scrollTo(0, 0);
 
     const gridItems = document.querySelectorAll(
-      ".grid-item, .slide-x-anim, .slide-y-anim"
+      ".grid-item, .slide-x-anim, .slide-y-anim, .line-x-anim-left, .line-x-anim-right"
     );
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -334,12 +334,19 @@ export default {
 }
 .grid-item {
   display: inline-block;
+  transition: all 300ms ease;
   opacity: 0;
   transform: translateY(75px);
 
   &.in-view {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  &:hover {
+    & img {
+      transform: scale(1.035);
+    }
   }
 }
 
@@ -449,13 +456,9 @@ export default {
 
 .image-box {
   overflow: hidden;
-  
-  & img {
-    transition: transform 500ms ease-out;
-  }
 
-  &:hover img {
-    transform: scale(1.05);
+  & img {
+    transition: transform 750ms ease-out;
   }
 }
 </style>

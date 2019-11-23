@@ -80,11 +80,6 @@ body {
     }
 }
 
-@media screen and (max-width: 1023px) {
-    .line-x-anim-right::after {
-        width: 100px;
-    }
-}
 
 .line-x-anim-left {
     &::before {
@@ -107,6 +102,21 @@ body {
     }
 }
 
+
+@media screen and (max-width: 1023px) {
+    .line-x-anim-right::after, .line-x-anim-left::before {
+        width: 100px;
+    }
+
+    .line-x-half-width::before, .line-x-half-width::after {
+        width: 50px;
+    }
+}
+
+.line-x-white::before, .line-x-white::after {
+    background: white;
+}
+
 .anim-slow {
     transition-duration: 500ms;
     animation-duration: 500ms;
@@ -117,63 +127,26 @@ body {
     animation-duration: 750ms;
 }
 
-.image {
-    position: relative;
-    overflow: hidden;
+.hooper-prev, .hooper-next { 
+    background-color: rgba(255, 255, 255, 0.35) !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 9999px;
+    transition: all 250ms ease-in-out;
 
-    h1 {
-        font-size: 8vw;
-        line-height: 1;
-        margin: 0;
-        opacity: 0;
-        padding: 1.25rem 2rem;
-        color: #49968d;
-        text-transform: uppercase;
-        animation: fadeIn 0s 0.6s;
-        animation-fill-mode: forwards;
-    }
-
-    &::after {
-        position: absolute;
-        content: '';
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #f0f2f6;
-        transform: translateX(-100%);
-        animation: secondaryImageOverlayIn 0.6s 0s, secondaryImageOverlayOut 0.6s 0.6s;
-        animation-fill-mode: both;
-    }
-
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.75) !important;
     }
 }
 
-@keyframes secondaryImageOverlayIn {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
+@media screen and (max-width: 639px) {
+    .special .hooper-next, .special .hooper-prev {
+        top: 25%;
     }
 }
 
-@keyframes secondaryImageOverlayOut {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(100%);
+@media screen and (max-width: 1023px) {
+    .special .hooper-next, .special .hooper-prev {
+        top: 35%;
     }
 }

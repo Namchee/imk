@@ -12,7 +12,7 @@
     </div>
     <div class="pt-4 lg:px-24 px-4">
       <div class="p-4 lg:p-8">
-        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb4">Current</p>
+        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">Current</p>
         <div
           :id='item.id'
           v-for="item in currents"
@@ -26,7 +26,7 @@
             <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">Exhibition</p>
             <a
               @click="copyToClipboard(item.id)"
-              class="text-2xl md:text-4xl title cursor-pointer"
+              class="text-2xl md:text-4xl title cursor-pointer anchor"
             >{{ item.title }}</a>
             <p
               class="text-sm uppercase mb-2"
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="p-4 lg:p-8">
-        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb4">Upcoming</p>
+        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">Upcoming</p>
         <div
           :id='item.id'
           v-for="item in upcomings"
@@ -94,7 +94,7 @@
           </figure>
           <div class="lg:w-2/3 md:px-4 lg:px-8 py-4">
             <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">Exhibition</p>
-            <h1 class="text-2xl md:text-4xl title">{{ item.title }}</h1>
+            <a @click="copyToClipboard(item.id)" class="text-2xl md:text-4xl title anchor cursor-pointer">{{ item.title }}</a>
             <p
               class="text-sm uppercase mb-2"
             >{{ getFormattedDate(item.startDate) }} &ndash; {{ getFormattedDate(item.endDate) }}</p>
@@ -149,7 +149,7 @@
         </div>
       </div>
       <div class="p-4 lg:p-8">
-        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb4">Past Events</p>
+        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">Past Events</p>
         <div
           :id='item.id'
           v-for="item in pasts"
@@ -161,7 +161,7 @@
           </figure>
           <div class="lg:w-2/3 md:px-4 lg:px-8 py-4">
             <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">Exhibition</p>
-            <h1 class="text-2xl md:text-4xl title">{{ item.title }}</h1>
+            <a class="text-2xl md:text-4xl title anchor cursor-pointer" @click="copyToClipboard(item.id)">{{ item.title }}</a>
             <p
               class="text-sm uppercase mb-2"
             >{{ getFormattedDate(item.startDate) }} &ndash; {{ getFormattedDate(item.endDate) }}</p>
@@ -408,6 +408,22 @@ export default {
   &:hover,
   &:focus {
     background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.anchor {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    margin-left: 1rem;
+    transition: opacity 150ms ease;
+    content: '#';
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 }
 </style>
