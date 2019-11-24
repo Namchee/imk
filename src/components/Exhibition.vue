@@ -9,6 +9,7 @@
           class="md:text-xl wd:text-2xl text-center md:text-right font-serif italic slide-y-anim"
         >Set you art journery anew</p>
       </div>
+      <div class="fade"></div>
     </div>
     <div class="pt-4 lg:px-24 px-4">
       <div class="p-4 lg:p-8">
@@ -216,16 +217,22 @@
         </div>
       </div>
     </div>
+    <back-to-top></back-to-top>
   </div>
 </template>
 
 <script>
 import { format } from "date-fns";
 import source from "./../resources/exhibitions/data.json";
+import BackToTop from './../components/BackToTop';
 
 const defaultPath = "./exhibitions/";
 
 export default {
+  components: {
+    BackToTop,
+  },
+
   data: function() {
     return {
       loading: false
@@ -342,10 +349,27 @@ export default {
   align-items: center;
 }
 
-@media screen and (min-width: 640px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .hero {
-    height: 65vh;
+    min-height: 60vh;
+    max-height: 65vh;
   }
+}
+
+.fade {
+  position: absolute;
+  bottom: 0px;
+
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 25%
+  );
 }
 
 @media screen and (min-width: 1024px) {

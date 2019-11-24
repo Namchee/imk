@@ -9,6 +9,7 @@
           class="md:text-xl wd:text-2xl text-center md:text-right font-serif italic slide-y-anim"
         >Discover our adventurous story</p>
       </div>
+      <div class="fade"></div>
     </div>
 
     <div class="article p-4 lg:p-12">
@@ -132,10 +133,27 @@ export default {
   align-items: center;
 }
 
-@media screen and (min-width: 640px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .hero {
-    height: 65vh;
+    min-height: 60vh;
+    max-height: 65vh;
   }
+}
+
+.fade {
+  position: absolute;
+  bottom: 0px;
+
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 25%
+  );
 }
 
 .banner {
@@ -195,7 +213,7 @@ li {
     & > *:nth-child(#{$i}) {
       transform: translateY(50px);
       opacity: 0;
-      transition: all 250ms ease-out calc(50ms + (100ms * $i));
+      transition: all 200ms ease-out calc(50ms + (75ms * $i));
     }
   }
 

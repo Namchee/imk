@@ -9,9 +9,10 @@
           class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic slide-y-anim"
         >Discover our collections and find what you love</p>
       </div>
+      <div class="fade"></div>
     </div>
     <h1
-      class="p-12 pb-0 slide-y-anim line-x-anim-left line-x-anim-right line-x-width-half text-center text-2xl md:text-4xl"
+      class="p-8 pb-0 slide-y-anim line-x-half-width line-x-anim-left line-x-anim-right text-center text-2xl md:text-4xl"
     >Our Collections</h1>
     <div class="grid p-4 md:p-8">
       <a
@@ -104,15 +105,18 @@
         </div>
       </div>
     </focus-trap>
+    <back-to-top></back-to-top>
   </div>
 </template>
 
 <script>
 import images from "./../resources/collections/*.*";
+import BackToTop from './BackToTop';
 import { FocusTrap } from "focus-trap-vue";
 
 export default {
   components: {
+    BackToTop,
     FocusTrap,
   },
 
@@ -293,11 +297,14 @@ export default {
   display: flex;
   align-items: center;
 }
-@media screen and (min-width: 640px) and (max-width: 1023px) {
+
+@media screen and (max-width: 1023px) {
   .hero {
-    height: 65vh;
+    min-height: 60vh;
+    max-height: 65vh;
   }
 }
+
 .card {
   position: relative;
   width: 65%;
@@ -327,6 +334,23 @@ export default {
     justify-content: center;
   }
 }
+
+.fade {
+  position: absolute;
+  bottom: 0px;
+
+  display: block;
+
+  width: 100%;
+  height: 50px;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 25%
+  );
+}
+
 .grid {
   column-count: 3;
   column-gap: 2rem;

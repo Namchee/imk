@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <div class="lg:p-10 lg:pt-16 md:p-8 pt-20 lg:mb-0 mb-16">
+    <div class="lg:p-10 lg:pt-16 md:p-8 pt-20 lg:mb-0 mb-16 wd:p-24">
       <h1 class="text-center lg:mb-12 mb-8 font-serif lg:text-6xl text-3xl line-x-anim-left line-x-anim-right slide-y-anim line-x-half-width">
         Exhibitions
       </h1>
