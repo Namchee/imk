@@ -210,6 +210,7 @@ export default {
         infiniteScroll: true,
         trimToWhiteSpace: true,
         autoPlay: true,
+        wheelControl: false,
         centerMode: true,
         playSpeed: 5000,
         breakpoints: {
@@ -226,6 +227,7 @@ export default {
       exhibitionsSettings: {
         itemsToShow: 1,
         infiniteScroll: true,
+        wheelControl: false,
         trimToWhiteSpace: true,
         autoPlay: true,
         centerMode: true,
