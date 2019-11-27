@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Collections from './../components/Collections';
+import { i18n } from './../index';
 
 const Layout = () => import('./../layouts/Layout');
 const Home = () => import('./../components/Home');
@@ -28,40 +29,64 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      redirect: '/id',
+    },
+    {
+      path: '/404',
+      component: PageNotFound,
+      name: 'PageNotFound',
+      meta: {
+        title: 'Page Not Found!',
+      },
+    },
+    {
+      path: '/:lang',
       component: Layout,
       name: 'Layout',
       children: [
         {
-          path: '/home',
+          path: 'home',
           component: Home,
           name: 'Home',
           alias: '/',
           meta: {
-            title: '',
+            title: {
+              en: '',
+              id: '',
+            },
           },
         },
         {
-          path: '/about_us',
+          path: 'about_us',
           component: About,
           name: 'About',
           meta: {
-            title: 'About Us',
+            title: {
+              en: 'About Us',
+              id: 'Tentang Kami',
+            },
           },
         },
         {
-          path: '/collections',
+          path: 'collections',
           component: Collections,
           name: 'Collections',
           meta: {
-            title: 'Collections',
+            title: {
+              en: 'Collections',
+              id: 'Koleksi Kami',
+            },
           },
         },
         {
-          path: '/exhibitions',
+          path: 'exhibitions',
           component: Exhibition,
           name: 'Exhibition',
           meta: {
-            title: 'Exhibitions',
+            title: {
+              en: 'Exhibitions',
+              id: 'Pameran',
+            },
           },
         },
         {
@@ -72,20 +97,27 @@ const router = new Router({
         },
       ],
     },
-    {
-      path: '/404',
-      component: PageNotFound,
-      name: 'PageNotFound',
-      meta: {
-        title: 'Page Not Found!',
-      },
-    },
   ],
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = (to.meta.title) ? (to.meta.title + ' - Roemah Seni Sarasvati') : 'Roemah Seni Sarasvati';
-  next();
+  if (to.name !== 'PageNotFound') {
+    const lang = to.params.lang;
+
+    if (['en', 'id'].includes(lang)) {
+      i18n.locale = lang;
+
+      document.title = (to.meta.title[lang]) ?
+        (to.meta.title[lang] + ' - Roemah Seni Sarasvati') :
+        'Roemah Seni Sarasvati';
+
+      next();
+    } else {
+      next({ name: 'PageNotFound' });
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;

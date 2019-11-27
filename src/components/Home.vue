@@ -13,7 +13,7 @@
           target="_blank"
           class="inline-flex dir border-2 border-white p-3 px-10 uppercase slide-y-anim"
         >
-          <span>Show me the way</span>
+          <span>{{ $t('map') }}</span>
           <span class="arrow">
             <svg
               width="24"
@@ -37,7 +37,7 @@
       <div class="w-full lg:w-7/12 mb-8 lg:mb-0 lg:px-16 lg:py-4">
         <h1
           class="lg:text-5xl text-3xl mb-4 font-medium font-serif"
-        >Welcome To Roemah Seni Sarasvati!</h1>
+        >{{ $t('welcome') }}</h1>
         <p
           class="mb-12"
         >Founded in 2010, Sarasvati Art Communication &amp; Publication is dedicated towards promoting the development of Indonesian art and culture. Started as a print and online media, Sarasvati now has branched out into facilitating consultancy services, promotion, education, as well as event planning within the fields of art and culture.</p>
@@ -112,25 +112,6 @@
         <hooper-navigation slot="hooper-addons" class="special"></hooper-navigation>
       </hooper>
     </div>
-
-<!--
-    <div class="lg:p-12 p-4 slide-y-anim flex flex-col items-center">
-      <h1 class="text-3xl lg:text-6xl font-serif text-center mb-8">
-        Come and Join The Fray
-      </h1>
-      <div class="flex flex-col items-center w-full lg:w-5/12 bg-dark2 text-white p-8">
-        <h1 class="lg:text-3xl text-2xl mb-4">
-          General Sudirman Street 137
-        </h1>
-        <p class="lg:text-2xl text-xl mb-4">
-          Karanganyar, Astanaanyar
-        </p>
-        <p class="lg:text-2xl text-xl mb-4">
-          Bandung, West Java, Indonesia
-        </p>
-      </div>
-    </div>
-    -->
   </div>
 </template>
 
@@ -141,7 +122,7 @@ import source from './../resources/exhibitions/data.json';
 import { format } from 'date-fns';
 import "hooper/dist/hooper.css";
 
-const buildPath = './exhibitions/';
+const buildPath = './../exhibitions/';
 
 export default {
   components: {

@@ -226,7 +226,7 @@ import { format } from "date-fns";
 import source from "./../resources/exhibitions/data.json";
 import BackToTop from './../components/BackToTop';
 
-const defaultPath = "./exhibitions/";
+const defaultPath = "./../exhibitions/";
 
 export default {
   components: {

@@ -19,18 +19,16 @@
         <router-link
           v-for='item in links'
           :key='item.path'
-          :to='item.path'
+          :to='{ name: item.name }'
           class='nav-item focus:outline-none text-3xl font-medium lg:text-lg lg:px-8 xl:px-10 nav-item flex justify-center items-center whitespace-no-wrap'
           :class='{ "active": activeLink(item) }'
         >
           <span>
-            {{ item.text }}
+            {{ item.text[$i18n.locale] }}
           </span>
         </router-link>
       </div>
-      <div class="flex items-center uppercase text-lg text-base">
-        EN / ID
-      </div>
+      <language-switcher />
       <button class="menu-close lg:hidden"
         @click='mobileMenu = false'>
         <span class="menu-close-icon">&times;</span>
@@ -54,7 +52,13 @@
 </template>
 
 <script>
+import LanguageSwitcher from './../components/LanguageSwitcher';
+
 export default {
+  components: {
+    LanguageSwitcher,
+  },
+
   data: function() {
     return {
       mobileMenu: false,
@@ -64,21 +68,33 @@ export default {
       currentScroll: 0,
       links: [
         {
-          path: '/home',
-          text: 'Home',
+          name: 'Home',
+          text: {
+            en: 'Home',
+            id: 'Beranda',
+          },
           alias: '/',
         },
         {
-          path: '/about_us',
-          text: 'About Us',
+          name: 'About',
+          text: {
+            en: 'About Us',
+            id: 'Tentang Kami',
+          },
         },
         {
-          path: '/collections',
-          text: 'Collections',
+          name: 'Collections',
+          text: {
+            en: 'Collections',
+            id: 'Koleksi Kami'
+          }
         },
         {
-          path: '/exhibitions',
-          text: 'Exhibitions',
+          name: 'Exhibition',
+          text: {
+            en: 'Exhibitions',
+            id: 'Pameran',
+          },
         },
       ],
       navbar: null,
@@ -112,8 +128,7 @@ export default {
 
   methods: {
     activeLink: function(link) {
-      return link.path === this.$route.path ||
-        link.alias === this.$route.path;
+      return link.name === this.$route.name;
     },
 
     handleScroll: function() {
