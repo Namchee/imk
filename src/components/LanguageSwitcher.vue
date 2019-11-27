@@ -21,6 +21,7 @@ export default {
         params: {
           lang,
         },
+        hash: this.$route.hash,
       });
     },
 
