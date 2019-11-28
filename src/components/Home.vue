@@ -44,7 +44,7 @@
         <router-link
           to="/about_us"
           class="inline-flex border border-black p-3 px-10 uppercase cta"
-        >About us</router-link>
+        >{{ $t('aboutUs')}}</router-link>
       </div>
       <div class="w-full lg:w-5/12 flex items-center lg:justify-center p-4">
         <img src="./../resources/logo_full.png" alt="Roemah Seni Sarasvati" title="Roemah Seni Sarasvati" />
@@ -54,12 +54,12 @@
     <div class="grid text-white">
       <div class="content bg-dark2 pt-12">
         <div class="slide-y-anim flex flex-col items-center">
-          <h1 class="font-serif lg:text-6xl text-3xl mb-4 line-x-anim-left line-x-anim-right line-x-white line-x-half-width">Our Collections</h1>
+          <h1 class="font-serif lg:text-6xl text-3xl mb-4 line-x-anim-left line-x-anim-right line-x-white line-x-half-width">{{ $t('ourCollection') }}</h1>
           <router-link
             to="/collections"
             class="inline-flex border border-white p-3 px-10 uppercase cta cta-inverse"
           >
-            Show me more
+            {{ $t('showMore') }}
           </router-link>
         </div>
         
@@ -82,7 +82,7 @@
 
     <div class="lg:p-10 lg:pt-16 md:p-8 pt-20 lg:mb-0 mb-16 wd:p-24">
       <h1 class="text-center lg:mb-12 mb-8 font-serif lg:text-6xl text-3xl line-x-anim-left line-x-anim-right slide-y-anim line-x-half-width">
-        Exhibitions
+        {{$t('exhibition')}}
       </h1>
       <hooper class="lg:p-8 exhibitionsSlider" :settings='exhibitionsSettings'>
         <slide v-for='item in exhibitionsData' :key='item.id' class="flex lg:flex-row flex-col">
@@ -105,7 +105,7 @@
               {{ item.place }}
             </p>
             <router-link :to='"/exhibitions#" + item.id' class="py-3 px-5 border text-lg border-black tracking-widest uppercase exhibition-button">
-              More Info
+              {{$t('moreInfo')}}
             </router-link>
           </div>
         </slide>

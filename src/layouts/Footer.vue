@@ -6,9 +6,9 @@
           <p class="text-2xl xl:text-3xl font-sans-alt tracking-wider mb-6">Roemah Seni Sarasvati</p>
           <div class="flex flex-col md:flex-row lg:justify-between">
             <div class="mb-5 lg:mb-0 lg:mr-0 mr-24">
-              <p class="text-xl xl:text-2xl mb-2">Gallery</p>
-              <p>Sudirman Street 137</p>
-              <p>Bandung, West Java, Indonesia</p>
+              <p class="text-xl xl:text-2xl mb-2">{{$t('gallery')}}</p>
+              <p>{{$t('address')}}</p>
+              <p>{{$t('place')}}</p>
               <p class="mb-2">40241</p>
               <p>
                 <svg
@@ -27,8 +27,8 @@
               </p>
             </div>
             <div>
-              <p class="text-xl xl:text-2xl mb-2">Office</p>
-              <p>Jemb. Batu Street 50</p>
+              <p class="text-xl xl:text-2xl mb-2">{{$t('office')}}</p>
+              <p>{{$t('officeAddress')}}</p>
               <p>DKI Jakarta, Indonesia</p>
               <p class="mb-2">11110</p>
               <p>
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="flex flex-col justify-between lg:items-end flex-grow-60 text-white">
-        <h1 class="text-2xl xl:text-3xl tracking-wider font-sans-alt mb-4 lg:mb-0">Stay In Touch</h1>
+        <h1 class="text-2xl xl:text-3xl tracking-wider font-sans-alt mb-4 lg:mb-0">{{$t('stayInTouch')}}</h1>
         <div class="flex links mb-4">
           <a
             href="mailto:info@sarasvati.co.id"
@@ -160,8 +160,8 @@
           </button>
         </div>
         <p class="lg:text-right text-sm lg:w-3/5">
-          By signing up you agree to our
-          <a href="#" class="underline">privacy policy</a>. You can unsubscribe or change your preferences at any time by clicking the link in any emails.
+          {{$t('bySigning')}}
+          <a href="#" class="underline">privacy policy</a>. {{$t('unsubscribe')}}
         </p>
       </div>
     </div>

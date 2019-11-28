@@ -4,16 +4,16 @@
       <div class="card p-8 md:p-12 wd:p-16 wd:py-24">
         <h1
           class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-right text-center tracking-wide mb-2"
-        >Exhibitions</h1>
+        >{{$t('exhibition')}}</h1>
         <p
           class="md:text-xl wd:text-2xl text-center md:text-right font-serif italic slide-y-anim"
-        >Set you art journery anew</p>
+        >{{$t('setYourArt')}}</p>
       </div>
       <div class="fade"></div>
     </div>
     <div class="pt-4 lg:px-24 px-4">
       <div class="p-4 lg:p-8">
-        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">Current</p>
+        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">{{$t('current')}}</p>
         <div
           :id='item.id'
           v-for="item in currents"
@@ -24,7 +24,8 @@
             <img :src="buildPath(item.folder)" :alt="item.title" :title="item.title" />
           </figure>
           <div class="lg:w-2/3 md:px-4 lg:px-8 py-4">
-            <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">Exhibition</p>
+            <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">{{$t('exhibition')}}
+            </p>
             <a
               @click="copyToClipboard(item.id)"
               class="text-2xl md:text-4xl title cursor-pointer anchor"
@@ -83,7 +84,7 @@
         </div>
       </div>
       <div class="p-4 lg:p-8">
-        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">Upcoming</p>
+        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">{{$t('upcoming')}}</p>
         <div
           :id='item.id'
           v-for="item in upcomings"
@@ -94,7 +95,7 @@
             <img :src="buildPath(item.folder)" :alt="item.title" :title="item.title" />
           </figure>
           <div class="lg:w-2/3 md:px-4 lg:px-8 py-4">
-            <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">Exhibition</p>
+            <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">{{$t('exhibition')}}</p>
             <a @click="copyToClipboard(item.id)" class="text-2xl md:text-4xl title anchor cursor-pointer">{{ item.title }}</a>
             <p
               class="text-sm uppercase mb-2"
@@ -150,7 +151,7 @@
         </div>
       </div>
       <div class="p-4 lg:p-8">
-        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">Past Events</p>
+        <p class="uppercase font-semibold tracking-widest line-x-anim-right mb-4">{{$t('pastEvent')}}</p>
         <div
           :id='item.id'
           v-for="item in pasts"
@@ -161,7 +162,7 @@
             <img :src="buildPath(item.folder)" :alt="item.title" :title="item.title" />
           </figure>
           <div class="lg:w-2/3 md:px-4 lg:px-8 py-4">
-            <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">Exhibition</p>
+            <p class="uppercase tracking-widest text-xs line-x-anim-right mb-2">{{$t('exhibition')}}</p>
             <a class="text-2xl md:text-4xl title anchor cursor-pointer" @click="copyToClipboard(item.id)">{{ item.title }}</a>
             <p
               class="text-sm uppercase mb-2"
