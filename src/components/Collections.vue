@@ -4,16 +4,16 @@
       <div class="card p-8 md:p-12 wd:p-16 wd:py-24">
         <h1
           class="text-4xl lg:text-6xl wd:text-7xl font-serif md:text-left text-center tracking-wide mb-2"
-        >Collections</h1>
+        >{{$t('collections')}}</h1>
         <p
           class="md:text-xl wd:text-2xl text-center md:text-left font-serif italic slide-y-anim"
-        >Discover our collections and find what you love</p>
+        >{{$t('discoverCollections')}}</p>
       </div>
       <div class="fade"></div>
     </div>
     <h1
       class="p-8 pb-0 slide-y-anim line-x-half-width line-x-anim-left line-x-anim-right text-center text-2xl md:text-4xl"
-    >Our Collections</h1>
+    >{{$t('ourCollection')}}</h1>
     <div class="grid p-4 md:p-8">
       <a
         v-for="(item, index) in imageList"
@@ -26,7 +26,7 @@
           <img :src="item.src" class="mb-2" :title="item.title" :alt="item.title" />
         </div>
         <p class="title font-sans-alt text-xl md:text-3xl">{{ item.title }}</p>
-        <p class="subtitle italic font-sans-alt">by - {{ item.author }}</p>
+        <p class="subtitle italic font-sans-alt">{{$t('by')}} - {{ item.author }}</p>
       </a>
     </div>
 
@@ -34,7 +34,7 @@
       <div class="details" :class="detailItem" tabindex="-1">
         <button class="menu-close" @click="killFocus()">
           <span class="menu-close-icon">&times;</span>
-          <span class="menu-close-label">Close</span>
+          <span class="menu-close-label">{{$t('close')}}</span>
         </button>
 
         <div class="flex lg:flex-row flex-col items-center h-full w-full">

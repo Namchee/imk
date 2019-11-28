@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center h-screen font-mono p-4">
     <h1 class="wd:text-6xl lg:text-5xl text-4xl mb-8">404</h1>
-    <p class="text-xl mb-8 text-center">Whoops! The page you requested is not found :(</p>
+    <p class="text-xl mb-8 text-center">{{ $t('requestPageError') }}</p>
     <p class="text-center mb-16">
       <span class="text-xl">Maybe you:</span>
       <ul>
