@@ -1,7 +1,7 @@
 <template>
   <nav class="w-full bg-white shadow flex justify-between fixed top-0 lg:px-6 navbar"
     :class='{ "hide-navbar": hideMenu }'>
-    <router-link class="flex items-center justify-center logo ml-3" to="/">
+    <router-link class="flex items-center justify-center logo ml-3" :to='{ name: "Home" }'>
       <img
         src="./../resources/logo.png"
         alt="Roemah Seni Sarasvati"

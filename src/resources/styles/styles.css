@@ -12,7 +12,7 @@ body {
     font-family: 'Inter';
     font-weight: 100 900;
     src: local('Inter Variations'),
-        url('./../fonts/Inter.otf') format('truetype-variations');
+        url('./../fonts/Inter.otf') format('opentype-variations');
     unicode-range: U+00-7F;
     font-feature-settings: 'cv05'1;
 }

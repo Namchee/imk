@@ -6,8 +6,8 @@ Repository ini dibuat sebagai bentuk penyelesaian tugas mata kuliah Interaksi Ma
 
 ## Contributor
 
-- Cristopher - 2017730017 - Developer (kuli coding)
-- Kevin Draven Kenanga - 2017730023 - Data Provider, UI / UX Designer, Tester, Translator (kuli non-coding)
+- Cristopher - 2017730017 - Lead Developer, Repository Maintaner
+- Kevin Draven Kenanga - 2017730023 - Data Provider, UI / UX Designer, Tester, Translator
 
 ## Cara Menjalankan
 
