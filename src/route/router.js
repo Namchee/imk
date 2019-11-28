@@ -22,7 +22,7 @@ const router = new Router({
       return { selector: to.hash };
     } else if (savedPosition) {
       return savedPosition;
-    } else {
+    } else if (to.name !== 'Collections') {
       return { x: 0, y: 0 };
     }
   },

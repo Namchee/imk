@@ -2,7 +2,7 @@
     "id": {
         "map": "Tunjukkan Pada Saya",
         "welcome": "Selamat Datang di Roemah Seni Sarasvati!",
-        "introText": "Didirikan tahun 2010...",
+        "introText": "Didirikan tahun 2010, Sarasvati Art Communication & Publication didedikasikan untuk mempromosikan pengembangan seni dan budaya Indonesia. Dimulai sebagai media cetak dan online, Sarasvati sekarang telah bercabang menjadi fasilitasi layanan konsultasi, promosi, pendidikan, serta perencanaan acara dalam bidang seni dan budaya.",
         "aboutUs": "Tentang Kami",
         "ourCollection":"Koleksi Kami",
         "showMore": "Tunjukan lebih",
@@ -45,7 +45,8 @@
         "setYourArt": "Atur kembali perjalanan seni anda",
         "current": "Saat Ini",
         "upcoming": "Yang akan datang",
-        "pastEvent": "Acara lalu"
+        "pastEvent": "Acara lalu",
+        "collectionPlaceholder": "Ini adalah karya seni yang dibuat oleh pelukis ketika ia sedang melamun memikirkan tugasnya yang menumpuk. Bukannya mengerjakan tugas, ia malah melukis. Ia pun merubah haluan dari kuli coding menjadi seniman.",
     },
     "en": {
         "map": "Show Me The Way",
@@ -93,6 +94,7 @@
         "setYourArt": "Set your art journey anew",
         "current": "Current",
         "upcoming": "Upcoming",
-        "pastEvent": "Past Events"
+        "pastEvent": "Past Events",
+        "collectionPlaceholder": "This is a work of art that was made by a painter when he was daydreaming about his piling work. Instead of doing assignments, he paints instead. He also changed course from coolie coding to become an artist."
     }
 }

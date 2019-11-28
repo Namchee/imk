@@ -40,7 +40,7 @@
         >{{ $t('welcome') }}</h1>
         <p
           class="mb-12"
-        >{{ $t('introText') }}, Sarasvati Art Communication &amp; Publication is dedicated towards promoting the development of Indonesian art and culture. Started as a print and online media, Sarasvati now has branched out into facilitating consultancy services, promotion, education, as well as event planning within the fields of art and culture.</p>
+        >{{ $t('introText') }}</p>
         <router-link
           to="/about_us"
           class="inline-flex border border-black p-3 px-10 uppercase cta"

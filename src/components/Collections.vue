@@ -55,7 +55,7 @@
             >by - {{ detailFocus.detail ? detailFocus.detail.author : "" }}</p>
             <p
               class="md:text-lg mb-5"
-            >Ini adalah karya seni yang dibuat oleh pelukis ketika ia sedang melamun memikirkan tugasnya yang menumpuk. Bukannya mengerjakan tugas, ia malah melukis. Ia pun merubah haluan dari kuli coding menjadi seniman.</p>
+            >{{ $t('collectionPlaceholder') }}</p>
             <div class="flex links">
               <button
                 class="cursor-pointer focus:outline-none lg:p-3 lg:rounded-full p-1 mr-2"
