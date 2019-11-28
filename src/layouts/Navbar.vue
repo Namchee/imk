@@ -28,7 +28,7 @@
           </span>
         </router-link>
       </div>
-      <language-switcher />
+      <language-switcher></language-switcher>
       <button class="menu-close lg:hidden"
         @click='mobileMenu = false'>
         <span class="menu-close-icon">&times;</span>

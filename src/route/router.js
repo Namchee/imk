@@ -105,6 +105,7 @@ router.beforeEach((to, from, next) => {
     const lang = to.params.lang;
 
     if (['en', 'id'].includes(lang)) {
+      console.log('hai');
       i18n.locale = lang;
 
       document.title = (to.meta.title[lang]) ?
