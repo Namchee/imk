@@ -33,7 +33,7 @@
               class="text-sm uppercase mb-2"
             >{{ getFormattedDate(item.startDate) }} &ndash; {{ getFormattedDate(item.endDate) }}</p>
             <p class="text-sm uppercase mb-8">{{ item.place }}</p>
-            <p class="mb-12">{{ getFirstParagraph(item.desc) }}</p>
+            <p class="mb-12">{{ getFirstParagraph(item.desc[$i18n.locale]) }}</p>
             <div class="flex links">
               <button
                 class="cursor-pointer focus:outline-none lg:p-3 lg:rounded-full p-1 mr-2"
@@ -100,7 +100,7 @@
               class="text-sm uppercase mb-2"
             >{{ getFormattedDate(item.startDate) }} &ndash; {{ getFormattedDate(item.endDate) }}</p>
             <p class="text-sm uppercase mb-8">{{ item.place }}</p>
-            <p class="mb-12">{{ getFirstParagraph(item.desc) }}</p>
+            <p class="mb-12">{{ getFirstParagraph(item.desc[$i18n.locale]) }}</p>
             <div class="flex links">
               <button
                 class="cursor-pointer focus:outline-none lg:p-3 lg:rounded-full p-1 mr-2"
@@ -167,7 +167,7 @@
               class="text-sm uppercase mb-2"
             >{{ getFormattedDate(item.startDate) }} &ndash; {{ getFormattedDate(item.endDate) }}</p>
             <p class="text-sm uppercase mb-8">{{ item.place }}</p>
-            <p class="mb-12">{{ getFirstParagraph(item.desc) }}</p>
+            <p class="mb-12">{{ getFirstParagraph(item.desc[$i18n.locale]) }}</p>
             <div class="flex links">
               <button
                 class="cursor-pointer focus:outline-none lg:p-3 lg:rounded-full p-1 mr-2"
