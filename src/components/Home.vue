@@ -42,7 +42,7 @@
           class="mb-12"
         >{{ $t('introText') }}</p>
         <router-link
-          to="/about_us"
+          :to='{ name: "About" }'
           class="inline-flex border border-black p-3 px-10 uppercase cta"
         >{{ $t('aboutUs')}}</router-link>
       </div>
@@ -56,7 +56,7 @@
         <div class="slide-y-anim flex flex-col items-center">
           <h1 class="font-serif lg:text-6xl text-3xl mb-4 line-x-anim-left line-x-anim-right line-x-white line-x-half-width">{{ $t('ourCollection') }}</h1>
           <router-link
-            to="/collections"
+            :to='{ name: "Collections" }'
             class="inline-flex border border-white p-3 px-10 uppercase cta cta-inverse"
           >
             {{ $t('showMore') }}
@@ -70,7 +70,7 @@
         >
           <slide v-for="item in imageList" :key="item.id" class="flex justify-center items-center">
             <div class="image-box">
-              <router-link :to='"/collections#" + item.id'>
+              <router-link :to='{ name: "Collections", hash: `#${item.id}` }'>
                 <img :src="item.src" :title="item.title" :alt="item.title" class="px-2 lg:px-4 wd:px-5" />
               </router-link>
             </div>
@@ -104,7 +104,7 @@
             <p class="uppercase lg:text-lg mb-8">
               {{ item.place }}
             </p>
-            <router-link :to='"/exhibitions#" + item.id' class="py-3 px-5 border text-lg border-black tracking-widest uppercase exhibition-button">
+            <router-link :to='{ name: "Exhibition", hash: `#${item.id}` }' class="py-3 px-5 border text-lg border-black tracking-widest uppercase exhibition-button">
               {{$t('moreInfo')}}
             </router-link>
           </div>
